@@ -1,0 +1,77 @@
+﻿@model BookingSystem.Models.Booking
+
+@{
+    ViewData["Title"] = "Create Booking";
+}
+
+<div class="container py-5">
+    <h2 class="mb-5 text-center fw-bold" style="color: #2F3C7E;">📝 Create a New Booking</h2>
+
+    <!-- Selected Room Card -->
+    <div class="card shadow-sm rounded-4 mb-5 border-0">
+        <div class="card-header text-white rounded-top-4" style="background: linear-gradient(to right, #4F8A8B, #2F3C7E);">
+            <h4 class="mb-0">🏨 <span style="color: #FFC947;">Selected Room:</span> @ViewBag.Room.RoomClass.Type</h4>
+        </div>
+        <div class="card-body">
+            <p class="mb-2"><i class="bi bi-info-circle"></i> <strong>Description:</strong> @ViewBag.Room.RoomClass.Description</p>
+            <p><i class="bi bi-currency-dollar"></i> <strong>Price:</strong> <span class="text-success fw-bold">$@ViewBag.Room.Price</span> / night</p>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <form asp-action="Create" method="post" class="row g-4 needs-validation" novalidate>
+        <input type="hidden" asp-for="RoomID" value="@Model.RoomID" />
+
+        <!-- Check-In -->
+        <div class="col-md-6">
+            <label asp-for="CheckInDate" class="form-label">📅 Check-In Date</label>
+            <input asp-for="CheckInDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckInDate" class="text-danger small"></span>
+        </div>
+
+        <!-- Check-Out -->
+        <div class="col-md-6">
+            <label asp-for="CheckOutDate" class="form-label">📅 Check-Out Date</label>
+            <input asp-for="CheckOutDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckOutDate" class="text-danger small"></span>
+        </div>
+
+        <!-- Payment Amount -->
+        <div class="col-md-6">
+            <label asp-for="PaymentAmount" class="form-label">💳 Payment Amount</label>
+            <input asp-for="PaymentAmount" type="number" step="0.01" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="PaymentAmount" class="text-danger small"></span>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="col-md-6">
+            <label asp-for="PaymentMethod" class="form-label">💰 Payment Method</label>
+            <input asp-for="PaymentMethod" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="PaymentMethod" class="text-danger small"></span>
+        </div>
+
+        <!-- Buttons Side by Side -->
+        <div class="col-12 d-flex justify-content-center mt-4">
+            <button type="submit"
+                    class="btn py-3 px-5 fs-5 rounded-3 shadow-sm ms-auto me-5"
+                    style="background-color: #2F3C7E; color: black; transition: all 0.3s ease;"
+                    onmouseover="this.style.backgroundColor='#1E2A5A';"
+                    onmouseout="this.style.backgroundColor='#2F3C7E';">
+                ✅ Confirm Booking
+            </button>
+
+            <a href="@Url.Action("Index", "Room")"
+               class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
+               style="background-color: #2F3C7E; color: white; transition: all 0.3s ease;"
+               onmouseover="this.style.backgroundColor='#1E2A5A';"
+               onmouseout="this.style.backgroundColor='#2F3C7E';">
+                🔙 Back to Room List
+            </a>
+        </div>
+
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

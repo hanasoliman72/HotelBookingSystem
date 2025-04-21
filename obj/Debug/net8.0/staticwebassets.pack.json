@@ -1,0 +1,1117 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BookingSystem.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BookingSystem.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\CheckInn\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\css\\main.css",
+      "PackagePath": "staticwebassets\\CheckInn\\css\\main.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\css\\normalize.min.css",
+      "PackagePath": "staticwebassets\\CheckInn\\css\\normalize.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\fonts\\FontAwesome.otf",
+      "PackagePath": "staticwebassets\\CheckInn\\fonts\\FontAwesome.otf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\CheckInn\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\CheckInn\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\CheckInn\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\CheckInn\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\img\\Thumbs.db",
+      "PackagePath": "staticwebassets\\CheckInn\\img\\Thumbs.db"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\img\\logo.png",
+      "PackagePath": "staticwebassets\\CheckInn\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\index.html",
+      "PackagePath": "staticwebassets\\CheckInn\\index.html"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\js\\custom.js",
+      "PackagePath": "staticwebassets\\CheckInn\\js\\custom.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\js\\jquery-1.11.0.min.js",
+      "PackagePath": "staticwebassets\\CheckInn\\js\\jquery-1.11.0.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\js\\jquery.nav.js",
+      "PackagePath": "staticwebassets\\CheckInn\\js\\jquery.nav.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shAutoloader.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shAutoloader.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushAS3.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushAS3.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushAppleScript.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushAppleScript.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushBash.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushBash.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushCSharp.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushCSharp.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushColdFusion.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushColdFusion.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushCpp.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushCpp.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushCss.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushCss.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushDelphi.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushDelphi.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushDiff.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushDiff.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushErlang.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushErlang.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushGroovy.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushGroovy.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushJScript.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushJScript.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushJava.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushJava.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushJavaFX.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushJavaFX.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushPerl.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushPerl.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushPhp.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushPhp.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushPlain.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushPlain.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushPowerShell.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushPowerShell.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushPython.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushPython.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushRuby.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushRuby.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushSass.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushSass.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushScala.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushScala.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushSql.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushSql.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushVb.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushVb.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shBrushXml.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shBrushXml.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shCore.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shCore.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\scripts\\shLegacy.js",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\scripts\\shLegacy.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCore.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCore.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreDefault.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreDefault.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreDjango.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreDjango.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreEclipse.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreEclipse.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreEmacs.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreEmacs.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreFadeToGrey.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreFadeToGrey.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreMDUltra.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreMDUltra.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreMidnight.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreMidnight.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shCoreRDark.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shCoreRDark.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeDefault.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeDefault.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeDjango.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeDjango.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeEclipse.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeEclipse.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeEmacs.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeEmacs.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeFadeToGrey.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeFadeToGrey.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeMDUltra.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeMDUltra.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeMidnight.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeMidnight.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\CheckInn\\syntax-highlighter\\styles\\shThemeRDark.css",
+      "PackagePath": "staticwebassets\\CheckInn\\syntax-highlighter\\styles\\shThemeRDark.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\animate.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\animate.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\fontawesome-all.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\fontawesome-all.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\gijgo.css",
+      "PackagePath": "staticwebassets\\assets\\css\\gijgo.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\magnific-popup.css",
+      "PackagePath": "staticwebassets\\assets\\css\\magnific-popup.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\main.css",
+      "PackagePath": "staticwebassets\\assets\\css\\main.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\main.map",
+      "PackagePath": "staticwebassets\\assets\\css\\main.map"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\nice-select.css",
+      "PackagePath": "staticwebassets\\assets\\css\\nice-select.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\responsive.css",
+      "PackagePath": "staticwebassets\\assets\\css\\responsive.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\slick.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slick.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\slicknav.css",
+      "PackagePath": "staticwebassets\\assets\\css\\slicknav.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\assets\\css\\themify-icons.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\ElegantIcons.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ElegantIcons.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\ElegantIcons.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ElegantIcons.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\ElegantIcons.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ElegantIcons.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\ElegantIcons.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\ElegantIcons.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\gijgo-material.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\gijgo-material.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\gijgo-material.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\gijgo-material.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\gijgo-material.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\gijgo-material.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\gijgo-material.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\gijgo-material.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\themify.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\themify.eot"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\themify.svg",
+      "PackagePath": "staticwebassets\\assets\\fonts\\themify.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\themify.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\themify.ttf"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\fonts\\themify.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\themify.woff"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\about\\about_lft.png",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\about_lft.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\about\\about_right.png",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\about_right.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\about\\pet_care.png",
+      "PackagePath": "staticwebassets\\assets\\img\\about\\pet_care.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\adapt_icon\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\adapt_icon\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\adapt_icon\\1.svg",
+      "PackagePath": "staticwebassets\\assets\\img\\adapt_icon\\1.svg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\adapt_icon\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\adapt_icon\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\adapt_icon\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\adapt_icon\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\banner\\banner.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\banner.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\banner\\bradcam.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\bradcam.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\banner\\contact_bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\contact_bg.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\banner\\dog.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\dog.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\banner\\img.png",
+      "PackagePath": "staticwebassets\\assets\\img\\banner\\img.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\author.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\author.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\blog_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\blog_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog_2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\blog_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog_3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\blog_4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\blog_4.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\learn_about_bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\learn_about_bg.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\single_blog_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\single_blog_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\single_blog_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\single_blog_2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\single_blog_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\single_blog_3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\single_blog_4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\single_blog_4.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\single_blog_5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\single_blog_5.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\blog\\slide_thumb_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\blog\\slide_thumb_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\comment\\comment_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\comment\\comment_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\comment\\comment_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\comment\\comment_2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\comment\\comment_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\comment\\comment_3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\customer\\customar1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\customar1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\customer\\customar2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\customar2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\customer\\customar_bg.png",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\customar_bg.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\customer\\cutomer.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\customer\\cutomer.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\dining\\dining-img.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\dining\\dining-img.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\dining\\dining-img.png",
+      "PackagePath": "staticwebassets\\assets\\img\\dining\\dining-img.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\dining\\dining-img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\dining\\dining-img2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\dining\\dining-img2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\dining\\dining-img2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\a.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\a.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\a2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\a2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\d.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\d.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\disabled-check.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\disabled-check.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\disabled-radio.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\disabled-radio.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f1.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f4.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f5.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f6.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f7.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\f8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\f8.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g1.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g4.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g5.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g6.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g7.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g7.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\g8.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\g8.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\primary-check.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\primary-check.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\primary-radio.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\primary-radio.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\success-check.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\success-check.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\elements\\success-radio.png",
+      "PackagePath": "staticwebassets\\assets\\img\\elements\\success-radio.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\assets\\img\\favicon.ico"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\gallery1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery1.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\gallery2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\gallery3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\gallery3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\gallery\\video.png",
+      "PackagePath": "staticwebassets\\assets\\img\\gallery\\video.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\aboutpage_hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\aboutpage_hero.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\contact_hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\contact_hero.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\footer_logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\footer_logo.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\h1_hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\h1_hero.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\roomspage_hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\roomspage_hero.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\hero\\servicespage_hero.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\hero\\servicespage_hero.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\date-picker-icon.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\date-picker-icon.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\form-iocn.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\form-iocn.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logo.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\logo2_footer.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\logo2_footer.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\select-items-icon.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\select-items-icon.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\logo\\testimonial.png",
+      "PackagePath": "staticwebassets\\assets\\img\\logo\\testimonial.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\offers\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\offers\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\offers\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\offers\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\offers\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\offers\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\our_blog\\blog-comments-icon.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\our_blog\\blog-comments-icon.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\our_blog\\blog-img1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\our_blog\\blog-img1.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\our_blog\\blog-img2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\our_blog\\blog-img2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\our_blog\\blog-img3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\our_blog\\blog-img3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\next.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\next.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_10.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_10.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_4.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_5.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_6.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_7.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_7.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_8.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_8.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\post_9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\post_9.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\post\\preview.png",
+      "PackagePath": "staticwebassets\\assets\\img\\post\\preview.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\10.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\10.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\4.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\4.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\5.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\5.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\6.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\6.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\7.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\7.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\8.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\8.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\prising\\9.png",
+      "PackagePath": "staticwebassets\\assets\\img\\prising\\9.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room1.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room2.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room2.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room3.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room3.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room4.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room4.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room5.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room5.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room6.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room6.jpg"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\service_icon_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\service_icon_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\service_icon_2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\service_icon_2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\service_icon_3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\service_icon_3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\service\\service_icon_bg_1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\service\\service_icon_bg_1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\team\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\team\\2.png",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\2.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\team\\3.png",
+      "PackagePath": "staticwebassets\\assets\\img\\team\\3.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\img\\testmonial\\1.png",
+      "PackagePath": "staticwebassets\\assets\\img\\testmonial\\1.png"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\animated.headline.js",
+      "PackagePath": "staticwebassets\\assets\\js\\animated.headline.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\contact.js",
+      "PackagePath": "staticwebassets\\assets\\js\\contact.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\gijgo.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\gijgo.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.ajaxchimp.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.ajaxchimp.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.form.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.form.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.magnific-popup.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.magnific-popup.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.nice-select.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.nice-select.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.paroller.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.paroller.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.scrollUp.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.scrollUp.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.slicknav.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.slicknav.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.sticky.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.sticky.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\mail-script.js",
+      "PackagePath": "staticwebassets\\assets\\js\\mail-script.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\main.js",
+      "PackagePath": "staticwebassets\\assets\\js\\main.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\one-page-nav-min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\one-page-nav-min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\plugins.js",
+      "PackagePath": "staticwebassets\\assets\\js\\plugins.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\popper.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\slick.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\slick.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\slicknav.css",
+      "PackagePath": "staticwebassets\\assets\\js\\slicknav.css"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\vendor\\jquery-1.12.4.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\jquery-1.12.4.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\vendor\\modernizr-3.5.0.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor\\modernizr-3.5.0.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\wow.min.js"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_blog.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_blog.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_blog_page.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_blog_page.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_booking.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_booking.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_bradcam.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_bradcam.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_color.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_color.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_common.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_common.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_contact.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_contact.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_customer.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_customer.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_dining.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_dining.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_elements.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_elements.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_extend.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_extend.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_footer.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_footer.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_gallery.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_gallery.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_h1-hero.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_h1-hero.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_headerMenu.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_headerMenu.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_mixins.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_mixins.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_overlay.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_overlay.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_reset.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_reset.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_room.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_room.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_testimonial.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_testimonial.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\_variables.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\_variables.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\main.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\main.scss"
+    },
+    {
+      "Id": "D:\\VS Code Projects\\BookingSystem\\wwwroot\\assets\\scss\\services.scss",
+      "PackagePath": "staticwebassets\\assets\\scss\\services.scss"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BookingSystem.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BookingSystem.props",
+      "PackagePath": "build\\BookingSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BookingSystem.props",
+      "PackagePath": "buildMultiTargeting\\BookingSystem.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BookingSystem.props",
+      "PackagePath": "buildTransitive\\BookingSystem.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
