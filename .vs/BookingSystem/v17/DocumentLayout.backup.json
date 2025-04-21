@@ -1,0 +1,161 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\VS Code Projects\\BookingSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\data\\bookingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:data\\bookingcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:models\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:models\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\models\\roomclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:models\\roomclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:views\\room\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:views\\booking\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|d:\\vs code projects\\bookingsystem\\controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C9010434-AD54-4F20-A982-1A6D721A3C54}|BookingSystem.csproj|solutionrelative:controllers\\roomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Views\\Room\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Room\\Index.cshtml",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Views\\Room\\Index.cshtml",
+              "RelativeToolTip": "Views\\Room\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T11:13:22.045Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Models\\Booking.cs",
+              "RelativeDocumentMoniker": "Models\\Booking.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Models\\Booking.cs",
+              "RelativeToolTip": "Models\\Booking.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:38:14.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BookingContext.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Data\\BookingContext.cs",
+              "RelativeDocumentMoniker": "Data\\BookingContext.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Data\\BookingContext.cs",
+              "RelativeToolTip": "Data\\BookingContext.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwAoAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T17:32:23.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Room.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Models\\Room.cs",
+              "RelativeDocumentMoniker": "Models\\Room.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Models\\Room.cs",
+              "RelativeToolTip": "Models\\Room.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwA0AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T08:50:53.353Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookingController.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Controllers\\BookingController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BookingController.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Controllers\\BookingController.cs",
+              "RelativeToolTip": "Controllers\\BookingController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAqwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T12:23:10.376Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Views\\Booking\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Booking\\Create.cshtml",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Views\\Booking\\Create.cshtml",
+              "RelativeToolTip": "Views\\Booking\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-21T12:17:51.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RoomController.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Controllers\\RoomController.cs",
+              "RelativeDocumentMoniker": "Controllers\\RoomController.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Controllers\\RoomController.cs",
+              "RelativeToolTip": "Controllers\\RoomController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwBYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T08:39:51.819Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RoomClass.cs",
+              "DocumentMoniker": "D:\\VS Code Projects\\BookingSystem\\Models\\RoomClass.cs",
+              "RelativeDocumentMoniker": "Models\\RoomClass.cs",
+              "ToolTip": "D:\\VS Code Projects\\BookingSystem\\Models\\RoomClass.cs",
+              "RelativeToolTip": "Models\\RoomClass.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T08:50:03.147Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
