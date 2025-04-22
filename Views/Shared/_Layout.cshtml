@@ -1,4 +1,8 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<BookingSystem.Models.ApplicationUser> SignInManager
+@inject UserManager<BookingSystem.Models.ApplicationUser> UserManager
+
+<!doctype html>
 <html class="no-js" lang="zxx">
 <head>
     <meta charset="utf-8">
@@ -26,34 +30,34 @@
 </head>
 
 <body>
-
     <!-- Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <strong>Hotel</b>
+                    <strong>Hotel</strong>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Preloader Start -->
+    <!-- Preloader End -->
 
     <header>
         <!-- Header Start -->
         <div class="header-area header-sticky">
-            <div class="main-header ">
+            <div class="main-header">
                 <div class="container">
                     <div class="row align-items-center">
-                        <!-- logo -->
+                        <!-- logo replaced with CheckInn text -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
-                                <a asp-controller="Home" asp-action="Index">
-                                    <img src="~/assets/img/logo/logo.png" alt="Logo" />
+                                <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
+                                    <span style="font-size: 24px; font-weight: 800; color: black;">CheckInn</span>
                                 </a>
                             </div>
                         </div>
+
                         <div class="col-xl-8 col-lg-8">
                             <!-- main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
@@ -61,19 +65,35 @@
                                     <ul id="navigation">
                                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                                         <li><a asp-controller="Home" asp-action="About">About</a></li>
-                                        <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
-                                        <li><a asp-controller="Account" asp-action="Login">Login</a></li>
-                                        <li><a asp-controller="Account" asp-action="Register">Register</a></li>
+                                        @if (SignInManager.IsSignedIn(User))
+                                        {
+                                            <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
+                                            <li>
+                                                <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm" class="d-inline">
+                                                    <button type="submit" class="btn btn-link text-dark p-0" style="text-decoration: none;">Logout</button>
+                                                </form>
+                                            </li>
+                                            <li>
+                                                <span style="color:black;">Hello, @User.Identity.Name</span>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+                                            <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                                        }
                                     </ul>
                                 </nav>
                             </div>
                         </div>
+
                         <div class="col-xl-2 col-lg-2">
                             <!-- header-btn -->
                             <div class="header-btn">
-                                <a asp-controller="Booking" asp-action="Create" class="btn btn1 d-none d-lg-block">Book Online</a>
+                                <a asp-controller="Booking" asp-action="BookAny" class="btn btn1 d-none d-lg-block">Book Online</a>
                             </div>
                         </div>
+
                         <!-- Mobile Menu -->
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -84,9 +104,11 @@
         </div>
         <!-- Header End -->
     </header>
+
     <main>
         @RenderBody()
     </main>
+
     <footer>
         <!-- Footer Start-->
         <div class="footer-area black-bg footer-padding">
@@ -94,7 +116,6 @@
                 <div class="row d-flex justify-content-between">
                     <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
                         <div class="single-footer-caption mb-30">
-                            <!-- logo -->
                             <div class="footer-logo">
                                 <a href="index.html"><img src="~/assets/img/logo/logo2_footer.png" alt=""></a>
                             </div>
@@ -106,9 +127,9 @@
                             </div>
                             <div class="footer-pera">
                                 <p>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-                                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                    All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i>
+                                    by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                                 </p>
                             </div>
                         </div>
@@ -120,7 +141,7 @@
                                 <ul>
                                     <li><a href="#">About Mariana</a></li>
                                     <li><a href="#">Our Best Rooms</a></li>
-                                    <li><a href="#">Our Photo Gellary</a></li>
+                                    <li><a href="#">Our Photo Gallery</a></li>
                                     <li><a href="#">Pool Service</a></li>
                                 </ul>
                             </div>
@@ -138,7 +159,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4  col-sm-5">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-5">
                         <div class="single-footer-caption mb-30">
                             <div class="footer-tittle">
                                 <h4>Our Location</h4>
@@ -146,7 +167,6 @@
                                     <li><a href="#">198 West 21th Street,</a></li>
                                     <li><a href="#">Suite 721 New York NY 10016</a></li>
                                 </ul>
-                                <!-- Form -->
                                 <div class="footer-form">
                                     <div id="mc_embed_signup">
                                         <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
@@ -174,42 +194,27 @@
     </footer>
 
     <!-- JS here -->
-    <!-- All JS Custom Plugins Link Here here -->
     <script src="~/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-
-    <!-- Jquery, Popper, Bootstrap -->
     <script src="~/assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="~/assets/js/popper.min.js"></script>
     <script src="~/assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
     <script src="~/assets/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
     <script src="~/assets/js/owl.carousel.min.js"></script>
     <script src="~/assets/js/slick.min.js"></script>
-    <!-- Date Picker -->
     <script src="~/assets/js/gijgo.min.js"></script>
-    <!-- One Page, Animated-HeadLin -->
     <script src="~/assets/js/wow.min.js"></script>
     <script src="~/assets/js/animated.headline.js"></script>
     <script src="~/assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- Scrollup, nice-select, sticky -->
     <script src="~/assets/js/jquery.scrollUp.min.js"></script>
     <script src="~/assets/js/jquery.nice-select.min.js"></script>
     <script src="~/assets/js/jquery.sticky.js"></script>
-
-    <!-- contact js -->
     <script src="~/assets/js/contact.js"></script>
     <script src="~/assets/js/jquery.form.js"></script>
     <script src="~/assets/js/jquery.validate.min.js"></script>
     <script src="~/assets/js/mail-script.js"></script>
     <script src="~/assets/js/jquery.ajaxchimp.min.js"></script>
-
-    <!-- Jquery Plugins, main Jquery -->
     <script src="~/assets/js/plugins.js"></script>
     <script src="~/assets/js/main.js"></script>
-
 </body>
 </html>
 

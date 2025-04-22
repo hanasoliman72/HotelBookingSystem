@@ -114,5 +114,47 @@ namespace BookingSystem.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        // GET: Room/Details/{id}
+        public IActionResult Details(int id)
+        {
+            var room = _context.rooms
+                               .Include(r => r.RoomClass) // Include related RoomClass for room details
+                               .FirstOrDefault(r => r.ID == id);
+
+            if (room == null)
+            {
+                return NotFound();
+            }
+
+            return View(room);
+        }
+
+
+        // GET: Room/ADD
+        public IActionResult Add()
+        {
+            // Populate the RoomClasses for the dropdown
+            ViewBag.RoomClasses = _context.roomClasses.ToList();
+            return View();
+        }
+
+        // POST: Room/Create
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Add(Room room)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.rooms.Add(room);
+                _context.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+
+            // Repopulate RoomClasses for the dropdown in case of validation failure
+            ViewBag.RoomClasses = _context.roomClasses.ToList();
+            return View(room);
+        }
+
+
     }
 }

@@ -50,25 +50,22 @@
             <span asp-validation-for="PaymentMethod" class="text-danger small"></span>
         </div>
 
-        <!-- Buttons Side by Side -->
-        <div class="col-12 d-flex justify-content-center mt-4">
-            <button type="submit"
-                    class="btn py-3 px-5 fs-5 rounded-3 shadow-sm ms-auto me-5"
-                    style="background-color: #2F3C7E; color: black; transition: all 0.3s ease;"
-                    onmouseover="this.style.backgroundColor='#1E2A5A';"
-                    onmouseout="this.style.backgroundColor='#2F3C7E';">
-                ✅ Confirm Booking
-            </button>
-
-            <a href="@Url.Action("Index", "Room")"
-               class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
-               style="background-color: #2F3C7E; color: white; transition: all 0.3s ease;"
-               onmouseover="this.style.backgroundColor='#1E2A5A';"
-               onmouseout="this.style.backgroundColor='#2F3C7E';">
-                🔙 Back to Room List
-            </a>
+        <!-- Buttons Side by Side with Proper Spacing -->
+        <div class="row w-100 justify-content-center mt-4">
+            <div class="col-auto mb-2 ml-3">
+                <button type="button" class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
+                        style="background-color: #FFC947; color: white; transition: all 0.3s ease;">
+                    ✅ Confirm Booking
+                </button>
+            </div>
+            <div class="col-auto mb-2 ml-3">
+                <a href="@Url.Action("Index", "Room")"
+                   class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
+                   style="background-color: #FFC947; color: white; transition: all 0.3s ease;">
+                    🔙 Back To Room List
+                </a>
+            </div>
         </div>
-
     </form>
 </div>
 

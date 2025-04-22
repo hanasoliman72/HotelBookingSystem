@@ -1,0 +1,81 @@
+﻿@model BookingSystem.Models.Booking
+@{
+    ViewData["Title"] = "Book Any Room";
+}
+
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold" style="color: #2F3C7E;">🛏️ Book Any Available Room</h2>
+        <p class="text-muted">Choose your room, dates, and payment method to complete your booking.</p>
+    </div>
+
+    <form class="row g-4 needs-validation" novalidate>
+        <!-- Removed asp-action to disable form submission -->
+        <!-- Room Selection -->
+        <div class="col-md-6">
+            <label asp-for="RoomID" class="form-label fw-semibold">Select Room <span class="text-danger">*</span></label>
+            <select asp-for="RoomID" class="form-select shadow-sm rounded-3" required>
+                <option value="">-- Choose a Room --</option>
+                @foreach (var room in ViewBag.Rooms as List<BookingSystem.Models.Room>)
+                {
+                    <option value="@room.ID">
+                        @room.RoomClass.Type (Floor @room.Floor) - $@room.Price
+                    </option>
+                }
+            </select>
+            <span asp-validation-for="RoomID" class="text-danger small"></span>
+        </div>
+
+        <!-- Check-In Date -->
+        <div class="col-md-6">
+            <label asp-for="CheckInDate" class="form-label fw-semibold">Check-In Date <span class="text-danger">*</span></label>
+            <input asp-for="CheckInDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckInDate" class="text-danger small"></span>
+        </div>
+
+        <!-- Check-Out Date -->
+        <div class="col-md-6">
+            <label asp-for="CheckOutDate" class="form-label fw-semibold">Check-Out Date <span class="text-danger">*</span></label>
+            <input asp-for="CheckOutDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckOutDate" class="text-danger small"></span>
+        </div>
+
+        <!-- Payment Amount -->
+        <div class="col-md-6">
+            <label asp-for="PaymentAmount" class="form-label fw-semibold">Payment Amount ($) <span class="text-danger">*</span></label>
+            <input asp-for="PaymentAmount" type="number" step="0.01" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="PaymentAmount" class="text-danger small"></span>
+        </div>
+
+        <!-- Payment Method -->
+        <div class="col-md-6">
+            <label asp-for="PaymentMethod" class="form-label fw-semibold">Payment Method <span class="text-danger">*</span></label>
+            <select asp-for="PaymentMethod" class="form-select shadow-sm rounded-3" required>
+                <option value="">-- Select Method --</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="PayPal">PayPal</option>
+                <option value="Cash">Cash</option>
+                <option value="Bank Transfer">Bank Transfer</option>
+            </select>
+            <span asp-validation-for="PaymentMethod" class="text-danger small"></span>
+        </div>
+
+        <!-- Book Now Button -->
+        <div class="col-12 text-center mt-4">
+            <button type="button" class="btn py-3 px-5 fs-5 rounded-3 shadow-sm text-white" style="background-color: #FFC947;">
+                📝 Book Now
+            </button>
+        </div>
+
+        <!-- Back to Home Button -->
+        <div class="col-12 text-center mt-2">
+            <a href="@Url.Action("Index", "Home")" class="btn py-3 px-5 fs-5 rounded-3 shadow-sm text-white" style="background-color: #FFC947;">
+                🔙 Back to Home
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
