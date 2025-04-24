@@ -36,6 +36,8 @@ namespace BookingSystem.Data
                 new Room { ID = 5, RoomClassID = 3, Floor = 4, Price = 200.00m, Rate = 5, ImageUrl = "/assets/img/rooms/room5.jpg", View = "Mountain View", Status = RoomStatus.Available },
                 new Room { ID = 6, RoomClassID = 2, Floor = 5, Price = 250.00m, Rate = 5, ImageUrl = "/assets/img/rooms/room6.jpg", View = "Mountain View", Status = RoomStatus.Available }
             );
+
+
         }
 
         // Seed roles method

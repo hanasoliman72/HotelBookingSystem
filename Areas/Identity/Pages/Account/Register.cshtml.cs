@@ -136,7 +136,7 @@ public class RegisterModel : PageModel
                     LastName = Input.LastName,
                     UserName = Input.UserName,
                     Email = Input.Email,
-                    Password = Input.Password, // You may not want to save this directly; consider hashing or other security measures
+                    Password = Input.Password, 
                     PhoneNumber = Input.PhoneNumber,
                     Role = (userCount == 1) ? "SuperAdmin" : "User" // Set role as SuperAdmin for the first user, otherwise User
                 };

@@ -21,7 +21,6 @@ namespace BookingSystem
 
             builder.Services.AddRazorPages();
 
-            // ✅ Add full Identity (with roles and email confirmation)
             builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
             {
                 options.SignIn.RequireConfirmedAccount = false;
@@ -31,7 +30,7 @@ namespace BookingSystem
 
             var app = builder.Build();
 
-            // ✅ Seed roles and SuperAdmin user
+            //Seed roles and SuperAdmin user
             using (var scope = app.Services.CreateScope())
             {
                 var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
@@ -44,7 +43,7 @@ namespace BookingSystem
                 await BookingContext.SeedDefaultSuperAdminUserAsync(scope.ServiceProvider, userManager);
             }
 
-            // ✅ Seed other database data (rooms, room classes, etc.)
+            // Seed other database data (rooms, room classes, etc.)
             using (var scope = app.Services.CreateScope())
             {
                 var context = scope.ServiceProvider.GetService<BookingContext>();
@@ -61,7 +60,7 @@ namespace BookingSystem
 
             app.UseRouting();
 
-            app.UseAuthentication(); // Must come before UseAuthorization
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapRazorPages();
