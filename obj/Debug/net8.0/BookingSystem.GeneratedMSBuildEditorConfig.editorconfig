@@ -17,107 +17,79 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BookingSystem
 build_property.RootNamespace = BookingSystem
-build_property.ProjectDir = D:\VS Code Projects\BookingSystem\
+build_property.ProjectDir = D:\VS Projects\BookingSystem\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\VS Code Projects\BookingSystem
+build_property.MSBuildProjectDirectory = D:\VS Projects\BookingSystem
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/VS Projects/BookingSystem/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Booking/BookAny.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29rQW55LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Booking/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Booking/MyBookings.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xNeUJvb2tpbmdzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Home/About.cshtml]
+[D:/VS Projects/BookingSystem/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Home/Index.cshtml]
+[D:/VS Projects/BookingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Home/Privacy.cshtml]
+[D:/VS Projects/BookingSystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/register.cshtml]
+[D:/VS Projects/BookingSystem/Views/register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NccmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Room/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxBZGQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Room/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Room/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Room/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUm9vbVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/VS Code Projects/BookingSystem/Views/Shared/Error.cshtml]
+[D:/VS Projects/BookingSystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Shared/_LoginPartial.cshtml]
+[D:/VS Projects/BookingSystem/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/VS Projects/BookingSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/_ViewImports.cshtml]
+[D:/VS Projects/BookingSystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/_ViewStart.cshtml]
+[D:/VS Projects/BookingSystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/VS Code Projects/BookingSystem/Views/Shared/_Layout.cshtml]
+[D:/VS Projects/BookingSystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-5sp4skaig3

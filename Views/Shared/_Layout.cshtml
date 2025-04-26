@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<BookingSystem.Models.ApplicationUser> SignInManager
 @inject UserManager<BookingSystem.Models.ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
 
 <!doctype html>
 <html class="no-js" lang="zxx">

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\VS Code Projects\\BookingSystem\\BookingSystem.csproj": {}
+    "D:\\VS Projects\\BookingSystem\\BookingSystem.csproj": {}
   },
   "projects": {
-    "D:\\VS Code Projects\\BookingSystem\\BookingSystem.csproj": {
+    "D:\\VS Projects\\BookingSystem\\BookingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\VS Code Projects\\BookingSystem\\BookingSystem.csproj",
+        "projectUniqueName": "D:\\VS Projects\\BookingSystem\\BookingSystem.csproj",
         "projectName": "BookingSystem",
-        "projectPath": "D:\\VS Code Projects\\BookingSystem\\BookingSystem.csproj",
+        "projectPath": "D:\\VS Projects\\BookingSystem\\BookingSystem.csproj",
         "packagesPath": "C:\\Users\\Win11\\.nuget\\packages\\",
-        "outputPath": "D:\\VS Code Projects\\BookingSystem\\obj\\",
+        "outputPath": "D:\\VS Projects\\BookingSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Win11\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookingSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class migration23 : Migration
+    public partial class migration2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,6 +34,7 @@ namespace BookingSystem.Migrations
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    role = table.Column<int>(type: "int", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -55,33 +56,13 @@ namespace BookingSystem.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "endUsers",
-                columns: table => new
-                {
-                    ID = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(8)", maxLength: 8, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_endUsers", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "roomClasses",
                 columns: table => new
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Type = table.Column<int>(type: "int", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     NumberOfBeds = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -135,8 +116,8 @@ namespace BookingSystem.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -180,8 +161,8 @@ namespace BookingSystem.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -205,9 +186,10 @@ namespace BookingSystem.Migrations
                     Floor = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Rate = table.Column<int>(type: "int", nullable: false),
-                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    View = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Status = table.Column<int>(type: "int", nullable: false)
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    View = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    PreviousStatus = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -231,17 +213,17 @@ namespace BookingSystem.Migrations
                     CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PaymentMethod = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    paymentMethod = table.Column<int>(type: "int", nullable: false),
+                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_bookings", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_bookings_endUsers_GuestID",
-                        column: x => x.GuestID,
-                        principalTable: "endUsers",
-                        principalColumn: "ID",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_bookings_AspNetUsers_applicationUserId",
+                        column: x => x.applicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_bookings_rooms_RoomID",
                         column: x => x.RoomID,
@@ -257,7 +239,7 @@ namespace BookingSystem.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BookingID = table.Column<int>(type: "int", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Comment = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
                     Rating = table.Column<int>(type: "int", nullable: false),
                     FeedbackDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -277,21 +259,22 @@ namespace BookingSystem.Migrations
                 columns: new[] { "ID", "Description", "NumberOfBeds", "Type" },
                 values: new object[,]
                 {
-                    { 1, "A spacious deluxe room with sea view.", 2, "Deluxe" },
-                    { 2, "A cozy standard room perfect for solo travelers.", 1, "Standard" },
-                    { 3, "Luxurious suite with a private living area.", 3, "Suite" }
+                    { 1, "A spacious deluxe room with sea view.", 2, 2 },
+                    { 2, "A cozy standard room perfect for solo travelers.", 1, 1 },
+                    { 3, "Luxurious suite with a private living area.", 3, 0 }
                 });
 
             migrationBuilder.InsertData(
                 table: "rooms",
-                columns: new[] { "ID", "Floor", "ImageUrl", "Price", "Rate", "RoomClassID", "Status", "View" },
+                columns: new[] { "ID", "Floor", "ImageUrl", "PreviousStatus", "Price", "Rate", "RoomClassID", "Status", "View" },
                 values: new object[,]
                 {
-                    { 1, 1, "/assets/img/rooms/room1.jpg", 120.00m, 5, 1, 0, "Sea View" },
-                    { 2, 2, "/assets/img/rooms/room2.jpg", 90.00m, 3, 2, 1, "City View" },
-                    { 3, 1, "/assets/img/rooms/room3.jpg", 150.00m, 5, 1, 0, "Sea View" },
-                    { 4, 3, "/assets/img/rooms/room4.jpg", 75.00m, 2, 2, 2, "Garden View" },
-                    { 5, 4, "/assets/img/rooms/room5.jpg", 200.00m, 5, 3, 0, "Mountain View" }
+                    { 1, 1, "/assets/img/rooms/room1.jpg", 0, 120.00m, 5, 1, 0, "Sea View" },
+                    { 2, 2, "/assets/img/rooms/room2.jpg", 0, 90.00m, 3, 2, 1, "City View" },
+                    { 3, 1, "/assets/img/rooms/room3.jpg", 2, 150.00m, 5, 1, 0, "Sea View" },
+                    { 4, 3, "/assets/img/rooms/room4.jpg", 1, 75.00m, 2, 2, 2, "Garden View" },
+                    { 5, 4, "/assets/img/rooms/room5.jpg", 1, 200.00m, 5, 3, 0, "Mountain View" },
+                    { 6, 5, "/assets/img/rooms/room6.jpg", 1, 250.00m, 5, 2, 0, "Mountain View" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -334,9 +317,9 @@ namespace BookingSystem.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_bookings_GuestID",
+                name: "IX_bookings_applicationUserId",
                 table: "bookings",
-                column: "GuestID");
+                column: "applicationUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_bookings_RoomID",
@@ -379,13 +362,10 @@ namespace BookingSystem.Migrations
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
-
-            migrationBuilder.DropTable(
                 name: "bookings");
 
             migrationBuilder.DropTable(
-                name: "endUsers");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "rooms");

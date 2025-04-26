@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookingSystem.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20250421233005_migration24")]
-    partial class migration24
+    [Migration("20250424204218_migration2")]
+    partial class migration2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,6 +85,9 @@ namespace BookingSystem.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
+                    b.Property<int>("role")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -118,70 +121,22 @@ namespace BookingSystem.Migrations
                     b.Property<decimal>("PaymentAmount")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("PaymentMethod")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("RoomID")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.Property<string>("applicationUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("GuestID");
+                    b.Property<int>("paymentMethod")
+                        .HasColumnType("int");
+
+                    b.HasKey("ID");
 
                     b.HasIndex("RoomID");
 
+                    b.HasIndex("applicationUserId");
+
                     b.ToTable("bookings");
-                });
-
-            modelBuilder.Entity("BookingSystem.Models.EndUser", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(8)
-                        .HasColumnType("nvarchar(8)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("endUsers");
-
-                    b.HasDiscriminator().HasValue("EndUser");
-
-                    b.UseTphMappingStrategy();
                 });
 
             modelBuilder.Entity("BookingSystem.Models.Feedback", b =>
@@ -196,7 +151,8 @@ namespace BookingSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Comment")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("FeedbackDate")
                         .HasColumnType("datetime2");
@@ -223,8 +179,10 @@ namespace BookingSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImageUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PreviousStatus")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -239,7 +197,6 @@ namespace BookingSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("View")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -254,6 +211,7 @@ namespace BookingSystem.Migrations
                             ID = 1,
                             Floor = 1,
                             ImageUrl = "/assets/img/rooms/room1.jpg",
+                            PreviousStatus = 0,
                             Price = 120.00m,
                             Rate = 5,
                             RoomClassID = 1,
@@ -265,6 +223,7 @@ namespace BookingSystem.Migrations
                             ID = 2,
                             Floor = 2,
                             ImageUrl = "/assets/img/rooms/room2.jpg",
+                            PreviousStatus = 0,
                             Price = 90.00m,
                             Rate = 3,
                             RoomClassID = 2,
@@ -276,6 +235,7 @@ namespace BookingSystem.Migrations
                             ID = 3,
                             Floor = 1,
                             ImageUrl = "/assets/img/rooms/room3.jpg",
+                            PreviousStatus = 2,
                             Price = 150.00m,
                             Rate = 5,
                             RoomClassID = 1,
@@ -287,6 +247,7 @@ namespace BookingSystem.Migrations
                             ID = 4,
                             Floor = 3,
                             ImageUrl = "/assets/img/rooms/room4.jpg",
+                            PreviousStatus = 1,
                             Price = 75.00m,
                             Rate = 2,
                             RoomClassID = 2,
@@ -298,9 +259,22 @@ namespace BookingSystem.Migrations
                             ID = 5,
                             Floor = 4,
                             ImageUrl = "/assets/img/rooms/room5.jpg",
+                            PreviousStatus = 1,
                             Price = 200.00m,
                             Rate = 5,
                             RoomClassID = 3,
+                            Status = 0,
+                            View = "Mountain View"
+                        },
+                        new
+                        {
+                            ID = 6,
+                            Floor = 5,
+                            ImageUrl = "/assets/img/rooms/room6.jpg",
+                            PreviousStatus = 1,
+                            Price = 250.00m,
+                            Rate = 5,
+                            RoomClassID = 2,
                             Status = 0,
                             View = "Mountain View"
                         });
@@ -315,15 +289,13 @@ namespace BookingSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberOfBeds")
                         .HasColumnType("int");
 
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Type")
+                        .HasColumnType("int");
 
                     b.HasKey("ID");
 
@@ -335,21 +307,21 @@ namespace BookingSystem.Migrations
                             ID = 1,
                             Description = "A spacious deluxe room with sea view.",
                             NumberOfBeds = 2,
-                            Type = "Deluxe"
+                            Type = 2
                         },
                         new
                         {
                             ID = 2,
                             Description = "A cozy standard room perfect for solo travelers.",
                             NumberOfBeds = 1,
-                            Type = "Standard"
+                            Type = 1
                         },
                         new
                         {
                             ID = 3,
                             Description = "Luxurious suite with a private living area.",
                             NumberOfBeds = 3,
-                            Type = "Suite"
+                            Type = 0
                         });
                 });
 
@@ -433,10 +405,12 @@ namespace BookingSystem.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -473,10 +447,12 @@ namespace BookingSystem.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(450)");
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -486,37 +462,21 @@ namespace BookingSystem.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("BookingSystem.Models.Admin", b =>
-                {
-                    b.HasBaseType("BookingSystem.Models.EndUser");
-
-                    b.HasDiscriminator().HasValue("Admin");
-                });
-
-            modelBuilder.Entity("BookingSystem.Models.Guest", b =>
-                {
-                    b.HasBaseType("BookingSystem.Models.EndUser");
-
-                    b.HasDiscriminator().HasValue("Guest");
-                });
-
             modelBuilder.Entity("BookingSystem.Models.Booking", b =>
                 {
-                    b.HasOne("BookingSystem.Models.Guest", "Guest")
-                        .WithMany("Bookings")
-                        .HasForeignKey("GuestID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("BookingSystem.Models.Room", "Room")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Guest");
+                    b.HasOne("BookingSystem.Models.ApplicationUser", "applicationUser")
+                        .WithMany("Bookings")
+                        .HasForeignKey("applicationUserId");
 
                     b.Navigation("Room");
+
+                    b.Navigation("applicationUser");
                 });
 
             modelBuilder.Entity("BookingSystem.Models.Feedback", b =>
@@ -592,6 +552,11 @@ namespace BookingSystem.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BookingSystem.Models.ApplicationUser", b =>
+                {
+                    b.Navigation("Bookings");
+                });
+
             modelBuilder.Entity("BookingSystem.Models.Booking", b =>
                 {
                     b.Navigation("Feedbacks");
@@ -605,11 +570,6 @@ namespace BookingSystem.Migrations
             modelBuilder.Entity("BookingSystem.Models.RoomClass", b =>
                 {
                     b.Navigation("Rooms");
-                });
-
-            modelBuilder.Entity("BookingSystem.Models.Guest", b =>
-                {
-                    b.Navigation("Bookings");
                 });
 #pragma warning restore 612, 618
         }
