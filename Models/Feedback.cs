@@ -10,7 +10,7 @@ namespace BookingSystem.Models
         [ForeignKey("Booking")]
         public int BookingID { get; set; }
 
-        [StringLength(1000, ErrorMessage = "Comment cannot exceed 1000 characters.")]
+        [StringLength(1500, ErrorMessage = "Comment cannot exceed 1500 characters.")]
         public string? Comment { get; set; }
 
         [Range(1, 5, ErrorMessage = "Rating must be between 1 and 5.")]

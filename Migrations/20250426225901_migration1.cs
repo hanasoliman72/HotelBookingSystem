@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookingSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class migration2 : Migration
+    public partial class migration1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -116,8 +116,8 @@ namespace BookingSystem.Migrations
                 name: "AspNetUserLogins",
                 columns: table => new
                 {
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
@@ -161,8 +161,8 @@ namespace BookingSystem.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(128)", maxLength: 128, nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
@@ -208,22 +208,22 @@ namespace BookingSystem.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GuestID = table.Column<int>(type: "int", nullable: false),
+                    GuestID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RoomID = table.Column<int>(type: "int", nullable: false),
                     CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PaymentAmount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    paymentMethod = table.Column<int>(type: "int", nullable: false),
-                    applicationUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    paymentMethod = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_bookings", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_bookings_AspNetUsers_applicationUserId",
-                        column: x => x.applicationUserId,
+                        name: "FK_bookings_AspNetUsers_GuestID",
+                        column: x => x.GuestID,
                         principalTable: "AspNetUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_bookings_rooms_RoomID",
                         column: x => x.RoomID,
@@ -239,7 +239,7 @@ namespace BookingSystem.Migrations
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     BookingID = table.Column<int>(type: "int", nullable: false),
-                    Comment = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: true),
+                    Comment = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: true),
                     Rating = table.Column<int>(type: "int", nullable: false),
                     FeedbackDate = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
@@ -317,9 +317,9 @@ namespace BookingSystem.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_bookings_applicationUserId",
+                name: "IX_bookings_GuestID",
                 table: "bookings",
-                column: "applicationUserId");
+                column: "GuestID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_bookings_RoomID",

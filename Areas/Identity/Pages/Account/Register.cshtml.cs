@@ -121,6 +121,11 @@ namespace BookingSystem.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    HttpContext.Session.SetString("Id", user.Id);
+                    HttpContext.Session.SetString("role", user.role.ToString());
+                    HttpContext.Session.SetString("UserName", user.UserName);
+                    HttpContext.Session.SetString("FullName", $"{user.FirstName} {user.LastName}");
+
                     _logger.LogInformation("User created a new account with password.");
 
                     await _userManager.AddToRoleAsync(user, Input.Role.ToString());

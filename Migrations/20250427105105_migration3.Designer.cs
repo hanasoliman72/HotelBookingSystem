@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookingSystem.Migrations
 {
     [DbContext(typeof(BookingContext))]
-    [Migration("20250424204218_migration2")]
-    partial class migration2
+    [Migration("20250427105105_migration3")]
+    partial class migration3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,8 +115,9 @@ namespace BookingSystem.Migrations
                     b.Property<DateTime>("CheckOutDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("GuestID")
-                        .HasColumnType("int");
+                    b.Property<string>("GuestID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("PaymentAmount")
                         .HasColumnType("decimal(18,2)");
@@ -124,17 +125,14 @@ namespace BookingSystem.Migrations
                     b.Property<int>("RoomID")
                         .HasColumnType("int");
 
-                    b.Property<string>("applicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("paymentMethod")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("RoomID");
+                    b.HasIndex("GuestID");
 
-                    b.HasIndex("applicationUserId");
+                    b.HasIndex("RoomID");
 
                     b.ToTable("bookings");
                 });
@@ -151,8 +149,8 @@ namespace BookingSystem.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Comment")
-                        .HasMaxLength(1000)
-                        .HasColumnType("nvarchar(1000)");
+                        .HasMaxLength(1500)
+                        .HasColumnType("nvarchar(1500)");
 
                     b.Property<DateTime>("FeedbackDate")
                         .HasColumnType("datetime2");
@@ -181,7 +179,7 @@ namespace BookingSystem.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("PreviousStatus")
+                    b.Property<int?>("PreviousStatus")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Price")
@@ -405,12 +403,10 @@ namespace BookingSystem.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -447,12 +443,10 @@ namespace BookingSystem.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(128)
-                        .HasColumnType("nvarchar(128)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -464,19 +458,21 @@ namespace BookingSystem.Migrations
 
             modelBuilder.Entity("BookingSystem.Models.Booking", b =>
                 {
+                    b.HasOne("BookingSystem.Models.ApplicationUser", "Guest")
+                        .WithMany("Bookings")
+                        .HasForeignKey("GuestID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("BookingSystem.Models.Room", "Room")
                         .WithMany("Bookings")
                         .HasForeignKey("RoomID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BookingSystem.Models.ApplicationUser", "applicationUser")
-                        .WithMany("Bookings")
-                        .HasForeignKey("applicationUserId");
+                    b.Navigation("Guest");
 
                     b.Navigation("Room");
-
-                    b.Navigation("applicationUser");
                 });
 
             modelBuilder.Entity("BookingSystem.Models.Feedback", b =>

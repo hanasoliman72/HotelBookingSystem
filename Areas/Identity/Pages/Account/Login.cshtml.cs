@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using BookingSystem.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace BookingSystem.Areas.Identity.Pages.Account
 {
@@ -84,6 +85,13 @@ namespace BookingSystem.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
+
+                    //Set session values
+                    HttpContext.Session.SetString("Id", user.Id);
+                    HttpContext.Session.SetString("role", user.role.ToString());
+                    HttpContext.Session.SetString("UserName", user.UserName);
+                    HttpContext.Session.SetString("FullName", $"{user.FirstName} {user.LastName}");
+
                     return LocalRedirect(returnUrl);
                 }
                 if (result.RequiresTwoFactor)

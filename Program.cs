@@ -38,7 +38,19 @@ namespace BookingSystem
 
             builder.Services.AddSession();//Add session services
             builder.Services.AddDistributedMemoryCache(); // For storing session in memory
+            builder.Services.AddHttpContextAccessor();
 
+            builder.Services.ConfigureApplicationCookie(options =>
+            {
+                options.ExpireTimeSpan = TimeSpan.FromMinutes(20); // Auto logout after 20 minutes
+                options.SlidingExpiration = true; // Optional: refresh the timer if the user is active
+                options.LoginPath = "/Identity/Account/Login";
+                options.LogoutPath = "/Identity/Account/Logout";
+            });
+
+            //// Image Upload
+            //builder.Services.AddSingleton<IWebHostEnvironment>(provider =>
+            //    provider.GetRequiredService<IWebHostEnvironment>());
 
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())

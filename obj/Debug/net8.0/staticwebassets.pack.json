@@ -841,8 +841,16 @@
       "PackagePath": "staticwebassets\\assets\\img\\prising\\9.png"
     },
     {
-      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room1.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room1.jpg"
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\3402021a-8d36-42b3-9bf4-64495aaf4498.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\3402021a-8d36-42b3-9bf4-64495aaf4498.jpg"
+    },
+    {
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\44638b4d-1e9c-4069-8e32-5914bef009c9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\44638b4d-1e9c-4069-8e32-5914bef009c9.jpg"
+    },
+    {
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\ea698f4d-7e4b-4c25-bfb9-9e04deab8426.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\ea698f4d-7e4b-4c25-bfb9-9e04deab8426.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room2.jpg",

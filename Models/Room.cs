@@ -7,8 +7,9 @@ namespace BookingSystem.Models
     public class Room
     {
         public int ID { get; set; }
-        [ForeignKey("RoomClass")]
         public int RoomClassID { get; set; }
+        public virtual RoomClass? RoomClass { get; set; }
+
         [Range(1, 10, ErrorMessage = "Floor must be between 1 and 10.")]
         public int Floor { get; set; }
         [Range(1, 1000000)]
@@ -16,12 +17,12 @@ namespace BookingSystem.Models
         [Range(1, 5, ErrorMessage = "Rate must be between 1 and 5.")]
         public int Rate { get; set; }
         public string? ImageUrl { get; set; }
+        [NotMapped] // This prevents EF from trying to store in database
+        public IFormFile? ImageFile { get; set; } // Make it optional
         public string? View { get; set; }
         public RoomStatus Status { get; set; } = RoomStatus.Available;
-        [Required]
         public RoomStatus? PreviousStatus { get; set; }
 
-        public virtual RoomClass RoomClass { get; set; }
         public virtual List<Booking> Bookings { get; set; } = new();
 
 

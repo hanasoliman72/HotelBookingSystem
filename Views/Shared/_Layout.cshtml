@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="~/site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.ico">
 
     <!-- CSS here -->
@@ -51,7 +51,6 @@
             <div class="main-header">
                 <div class="container">
                     <div class="row align-items-center">
-                        <!-- logo replaced with CheckInn text -->
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo">
                                 <a asp-controller="Home" asp-action="Index" class="text-decoration-none">
@@ -69,8 +68,17 @@
                                         <li><a asp-controller="Home" asp-action="About">About</a></li>
                                         @if (SignInManager.IsSignedIn(User))
                                         {
-                                            <li><a asp-controller="Home" asp-action="Index">My Bookings</a></li>
-                                            <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
+                                            var role = HttpContextAccessor.HttpContext.Session.GetString("role");
+                                            @if(role == "Admin")
+                                            {
+                                                <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
+                                            }
+                                            else
+                                            {
+                                                <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
+                                                <li><a asp-controller="Home" asp-action="Index">My Bookings</a></li>
+                                            }
+                                            
                                             <li>
                                                 <a href="javascript:void(0);" onclick="document.getElementById('logoutForm').submit();"
                                                    onmouseover="this.style.color='#ff5f13'" onmouseout="this.style.color='black'"
@@ -78,7 +86,7 @@
                                                 <form id="logoutForm" method="post" asp-area="Identity" asp-page="/Account/Logout" class="d-none"></form>
                                             </li>
                                             <li>
-                                                <span style="color:black;">Hello, @User.Identity.Name</span>
+                                                <span style="color:black;">Hello, @HttpContextAccessor.HttpContext.Session.GetString("UserName")</span>
                                             </li>
                                         }
                                         else
@@ -95,7 +103,15 @@
                         <div class="col-xl-2 col-lg-2">
                             <!-- header-btn -->
                             <div class="header-btn">
-                                <a asp-controller="Booking" asp-action="BookAny" class="btn btn1 d-none d-lg-block">Book Online</a>
+                                @if(SignInManager.IsSignedIn(User))
+                                {
+                                    <a asp-controller="Booking" asp-action="BookAny" class="btn btn1 d-none d-lg-block">Book Online</a>
+                                }
+                                else
+                                {
+                                    <a asp-area="Identity" asp-page="/Account/Login" class="btn btn1 d-none d-lg-block">Book Online</a>
+                                }
+
                             </div>
                         </div>
 

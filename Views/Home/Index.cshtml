@@ -1,306 +1,424 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<BookingSystem.Models.ApplicationUser> SignInManager
+@inject UserManager<BookingSystem.Models.ApplicationUser> UserManager
+@using Microsoft.AspNetCore.Http
+
+@{
+	ViewData["Title"] = "Home Page";
 }
 
 <!doctype html>
 <html class="no-js" lang="zxx">
 <body>
-    <main>
+	<main>
 
-        <!-- slider Area Start-->
-        <div class="slider-area ">
-            <!-- Mobile Menu -->
-            <div class="slider-active dot-style">
-                <div class="single-slider  hero-overly slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
-                    <div class="container">
-                        <div class="row justify-content-center text-center">
-                            <div class="col-xl-9">
-                                <div class="h1-slider-caption">
-                                    <h1 data-animation="fadeInUp" data-delay=".4s">top hotel in the city</h1>
-                                    <h3 data-animation="fadeInDown" data-delay=".4s">Hotel & Resourt</h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- slider Area End-->
-        <!-- Make customer Start-->
-        <section class="make-customer-area customar-padding fix">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-xl-5 col-lg-6">
-                        <div class="customer-img mb-120">
-                            <img src="~/assets/img/customer/customar1.png" class="customar-img1" alt="">
-                            <img src="~/assets/img/customer/customar2.png" class="customar-img2" alt="">
-                            <div class="service-experience heartbeat">
-                                <h3>25 Years of Service<br>Experience</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" col-xl-4 col-lg-4">
-                        <div class="customer-caption">
-                            <span>About our hotel</span>
-                            <h2>Your Home Away From Home</h2>
-                            <div class="caption-details">
-                                <p class="pera-dtails">Experience unmatched comfort, exceptional service, and a stay to remember in the heart of Assuit. Whether you’re here for business, leisure, or a little bit of both, CheckInn offers everything you need—from stylish rooms to world-class amenities. </p>
-                                <p>Our beautifully appointed rooms and suites are designed with your comfort in mind. Enjoy plush bedding, modern decor, high-speed Wi-Fi, and stunning views of city skyline.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Make customer End-->
-        <!-- Room Start -->
-        <section class="room-area">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-8">
-                        <!--font-back-tittle  -->
-                        <div class="font-back-tittle mb-45">
-                            <div class="archivment-front">
-                                <h3>Our Rooms</h3>
-                            </div>
-                            <h3 class="archivment-back">Our Rooms</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 1 })">
-                                    <img src="~/assets/img/rooms/room1.jpg" alt="Room 1">
-                                </a>
-                            </div>
+		<!-- slider Area Start-->
+		<div class="slider-area ">
+			<!-- Mobile Menu -->
+			<div class="slider-active dot-style">
+				<div class="single-slider  hero-overly slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.jpg">
+					<div class="container">
+						<div class="row justify-content-center text-center">
+							<div class="col-xl-9">
+								<div class="h1-slider-caption">
+									<h1 data-animation="fadeInUp" data-delay=".4s">top hotel in the city</h1>
+									<h3 data-animation="fadeInDown" data-delay=".4s">Hotel & Resourt</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- slider Area End-->
+		<!-- Make customer Start-->
+		<section class="make-customer-area customar-padding fix">
+			<div class="container-fluid p-0">
+				<div class="row">
+					<div class="col-xl-5 col-lg-6">
+						<div class="customer-img mb-120">
+							<img src="~/assets/img/customer/customar1.png" class="customar-img1" alt="">
+							<img src="~/assets/img/customer/customar2.png" class="customar-img2" alt="">
+							<div class="service-experience heartbeat">
+								<h3>25 Years of Service<br>Experience</h3>
+							</div>
+						</div>
+					</div>
+					<div class=" col-xl-4 col-lg-4">
+						<div class="customer-caption">
+							<span>About our hotel</span>
+							<h2>Your Home Away From Home</h2>
+							<div class="caption-details">
+								<p class="pera-dtails">Experience unmatched comfort, exceptional service, and a stay to remember in the heart of Assuit. Whether you’re here for business, leisure, or a little bit of both, CheckInn offers everything you need—from stylish rooms to world-class amenities. </p>
+								<p>Our beautifully appointed rooms and suites are designed with your comfort in mind. Enjoy plush bedding, modern decor, high-speed Wi-Fi, and stunning views of city skyline.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Make customer End-->
+		<!-- Room Start -->
+		<section class="room-area">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-8">
+						<!--font-back-tittle  -->
+						<div class="font-back-tittle mb-45">
+							<div class="archivment-front">
+								<h3>Our Rooms</h3>
+							</div>
+							<h3 class="archivment-back">Our Rooms</h3>
+						</div>
+					</div>
+				</div>
+				<div class="row">
 
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 1 })">
-                                        Classic Double Bed
-                                    </a>
-                                </h3>
-                                </a>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 2 })">
-                                    <img src="~/assets/img/rooms/room2.jpg" alt="Room 2">
-                                </a>
-                            </div>
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 2 })">Classic Double Bed</a>
-                                </h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ per night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 3 })">
-                                    <img src="~/assets/img/rooms/room3.jpg" alt="Room 3">
-                                </a>
-                            </div>
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 3 })">Classic Double Bed</a>
-                                </h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ per night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 4 })">
-                                    <img src="~/assets/img/rooms/room4.jpg" alt="Room 4">
-                                </a>
-                            </div>
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 4 })">Classic Double Bed</a>
-                                </h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ per night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 5 })">
-                                    <img src="~/assets/img/rooms/room5.jpg" alt="Room 5">
-                                </a>
-                            </div>
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 5 })">Classic Double Bed</a>
-                                </h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ per night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="@Url.Action("Details", "Room", new { id = 6 })">
-                                    <img src="~/assets/img/rooms/room6.jpg" alt="Room 6">
-                                </a>
-                            </div>
-                            <div class="room-caption">
-                                <h3>
-                                    <a href="@Url.Action("Details", "Room", new { id = 6 })">Classic Double Bed</a>
-                                </h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ per night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-center w-100 pt-5">
-                        <a asp-controller="Room" asp-action="Index" class="btn view-btn1">
-                            View More <i class="ti-angle-right"></i>
-                        </a>
-                    </div>
+			   <div class="col-xl-4 col-lg-6 col-md-6">
+				 <div class="single-room mb-50">
+					<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+												<a href="@Url.Action("Index", "Room")">
+													<img src="~/assets/img/rooms/room1.jpg" alt="Room 1">
+											   </a>
+								}
+								else
+								{
+											   <a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+												   <img src="~/assets/img/rooms/room1.jpg" alt="Room 1">
+											   </a>
+								}
+				  </div>
+			   <div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+							<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+							<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
 
-                </div>
 
-        </section>
-        <!-- Room End -->
-        <!-- Dining Start -->
-        <div class="dining-area dining-padding-top">
-            <!-- Single Left img -->
-            <div class="single-dining-area left-img">
-                <div class="container">
-                    <div class="row justify-content-end">
-                        <div class="col-lg-8 col-md-8">
-                            <div class="dining-caption">
-                                <span>Our restaurant</span>
-                                <h3>Dining & Drinks</h3>
-                                <p>Savor local and international flavors at our in-house restaurant, or enjoy room service from the comfort of your room.<br>Breakfast is always on us.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- single Right img -->
-            <div class="single-dining-area right-img">
-                <div class="container">
-                    <div class="row justify-content-start">
-                        <div class="col-lg-8 col-md-8">
-                            <div class="dining-caption text-right">
-                                <span>Our Pool</span>
-                                <h3>Swimming Pool</h3>
-                                <p>Take a dip in our rooftop pool, unwind in the spa, or get energized in the fitness center. <br>Your wellness is our priority.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Dining End -->
-        <        <!-- Testimonial Start -->
-        <div class="testimonial-area t-padding">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-9 col-lg-9 col-md-9">
-                        <div class="h1-testimonial-active">
 
-                            <!-- Emma's Testimonial -->
-                            <div class="single-testimonial pt-65">
-                                <div class="font-back-tittle mb-105">
-                                    <div class="archivment-front">
-                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma L.">
-                                    </div>
-                                    <h3 class="archivment-back">Testimonial</h3>
-                                </div>
-                                <div class="testimonial-caption text-center">
-                                    <p>
-                                        "From the moment we arrived, everything was flawless. The staff went above and beyond to make us feel welcome—every detail was taken care of with genuine warmth and professionalism. The room was immaculate with a breathtaking view that made it hard to leave. Dining at the restaurant was a true highlight—every meal was a masterpiece. This hotel is the definition of luxury. Can’t wait to return!"
-                                    </p>
-                                    <div class="testimonial-ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="rattiong-caption">
-                                        <span>— Emma L., New York, <span>Regular Client</span> </span>
-                                    </div>
-                                </div>
-                            </div>
+<div class="col-xl-4 col-lg-6 col-md-6">
+	<div class="single-room mb-50">
+		<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+					<a href="@Url.Action("Index", "Room")">
+						<img src="~/assets/img/rooms/room6.jpg" alt="Room 1">
+					</a>
+								}
+								else
+								{
+					<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+						<img src="~/assets/img/rooms/room6.jpg" alt="Room 1">
+					</a>
+								}
+		</div>
+		<div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+						<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+						<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
 
-                            <!-- Daniel's Testimonial -->
-                            <div class="single-testimonial pt-65">
-                                <div class="font-back-tittle mb-105">
-                                    <div class="archivment-front">
-                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Daniel M.">
-                                    </div>
-                                    <h3 class="archivment-back">Testimonial</h3>
-                                </div>
-                                <div class="testimonial-caption text-center">
-                                    <p>
-                                        "Impeccable service, elegant surroundings, and an unbeatable view made this hotel a standout. After long meetings, returning to a calm, luxurious space with top-tier dining was exactly what I needed. Highly recommend for anyone traveling on business who doesn’t want to compromise comfort."
-                                    </p>
-                                    <div class="testimonial-ratting">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div class="rattiong-caption">
-                                        <span>— Daniel M., London, <span>Business Traveler</span> </span>
-                                    </div>
-                                </div>
-                            </div>
+					<!-- Example for Room 1 - Apply same pattern to all rooms -->
+<div class="col-xl-4 col-lg-6 col-md-6">
+	<div class="single-room mb-50">
+		<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+					<a href="@Url.Action("Index", "Room")">
+						<img src="~/assets/img/rooms/room2.jpg" alt="Room 1">
+					</a>
+								}
+								else
+								{
+					<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+						<img src="~/assets/img/rooms/room2.jpg" alt="Room 1">
+					</a>
+								}
+		</div>
+		<div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+						<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+						<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Testimonial End -->
-        <!-- Gallery img Start-->
-        <div class="gallery-area fix">
-            <div class="container-fluid p-0">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="gallery-active owl-carousel">
-                            <div class="gallery-img">
-                                <a href="#"><img src="~/assets/img/gallery/gallery1.jpg" alt=""></a>
-                            </div>
-                            <div class="gallery-img">
-                                <a href="#"><img src="~/assets/img/gallery/gallery2.jpg" alt=""></a>
-                            </div>
-                            <div class="gallery-img">
-                                <a href="#"><img src="~/assets/img/gallery/gallery3.jpg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Gallery img End-->
-    </main>
+					<!-- Example for Room 1 - Apply same pattern to all rooms -->
+<div class="col-xl-4 col-lg-6 col-md-6">
+	<div class="single-room mb-50">
+		<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+					<a href="@Url.Action("Index", "Room")">
+						<img src="~/assets/img/rooms/room3.jpg" alt="Room 1">
+					</a>
+								}
+								else
+								{
+					<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+						<img src="~/assets/img/rooms/room3.jpg" alt="Room 1">
+					</a>
+								}
+		</div>
+		<div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+						<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+						<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+					<!-- Example for Room 1 - Apply same pattern to all rooms -->
+<div class="col-xl-4 col-lg-6 col-md-6">
+	<div class="single-room mb-50">
+		<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+					<a href="@Url.Action("Index", "Room")">
+						<img src="~/assets/img/rooms/room4.jpg" alt="Room 1">
+					</a>
+								}
+								else
+								{
+					<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+						<img src="~/assets/img/rooms/room4.jpg" alt="Room 1">
+					</a>
+								}
+		</div>
+		<div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+						<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+						<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+				   <!-- Example for Room 1 - Apply same pattern to all rooms -->
+<div class="col-xl-4 col-lg-6 col-md-6">
+	<div class="single-room mb-50">
+		<div class="room-img">
+								@if (SignInManager.IsSignedIn(User))
+								{
+					<a href="@Url.Action("Index", "Room")">
+						<img src="~/assets/img/rooms/room5.jpg" alt="Room 1">
+					</a>
+								}
+								else
+								{
+					<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">
+						<img src="~/assets/img/rooms/room5.jpg" alt="Room 1">
+					</a>
+								}
+		</div>
+		<div class="room-caption">
+			<h3>
+									@if (SignInManager.IsSignedIn(User))
+									{
+						<a href="@Url.Action("Index", "Room")">Classic Double Bed</a>
+									}
+									else
+									{
+						<a href="@Url.Page("/Account/Login", new { area = "Identity", returnUrl = Url.Action("Details", "Room", new { id = 1 }) })">Classic Double Bed</a>
+									}
+			</h3>
+			<div class="per-night">
+				<span><u>$</u>150 <span>/ per night</span></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+					<div class="d-flex justify-content-center w-100 pt-5">
+						@if (SignInManager.IsSignedIn(User))
+						{
+								<a asp-controller="Room" asp-action="Index" class="btn view-btn1">
+										View More <i class="ti-angle-right"></i>
+								</a>
+						}
+						else
+						{
+									<a asp-area="Identity" asp-page="/Account/Login" class="btn view-btn1">
+											View More <i class="ti-angle-right"></i>
+									</a>
+						}
+					</div>
+
+				</div>
+
+		</section>
+		<!-- Room End -->
+		<!-- Dining Start -->
+		<div class="dining-area dining-padding-top">
+			<!-- Single Left img -->
+			<div class="single-dining-area left-img">
+				<div class="container">
+					<div class="row justify-content-end">
+						<div class="col-lg-8 col-md-8">
+							<div class="dining-caption">
+								<span>Our restaurant</span>
+								<h3>Dining & Drinks</h3>
+								<p>Savor local and international flavors at our in-house restaurant, or enjoy room service from the comfort of your room.<br>Breakfast is always on us.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- single Right img -->
+			<div class="single-dining-area right-img">
+				<div class="container">
+					<div class="row justify-content-start">
+						<div class="col-lg-8 col-md-8">
+							<div class="dining-caption text-right">
+								<span>Our Pool</span>
+								<h3>Swimming Pool</h3>
+								<p>Take a dip in our rooftop pool, unwind in the spa, or get energized in the fitness center. <br>Your wellness is our priority.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Dining End -->
+		<        <!-- Testimonial Start -->
+		<div class="testimonial-area t-padding">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-9 col-lg-9 col-md-9">
+						<div class="h1-testimonial-active">
+
+							<!-- Emma's Testimonial -->
+							<div class="single-testimonial pt-65">
+								<div class="font-back-tittle mb-105">
+									<div class="archivment-front">
+										<img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emma L.">
+									</div>
+									<h3 class="archivment-back">Testimonial</h3>
+								</div>
+								<div class="testimonial-caption text-center">
+									<p>
+										"From the moment we arrived, everything was flawless. The staff went above and beyond to make us feel welcome—every detail was taken care of with genuine warmth and professionalism. The room was immaculate with a breathtaking view that made it hard to leave. Dining at the restaurant was a true highlight—every meal was a masterpiece. This hotel is the definition of luxury. Can’t wait to return!"
+									</p>
+									<div class="testimonial-ratting">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+									</div>
+									<div class="rattiong-caption">
+										<span>— Emma L., New York, <span>Regular Client</span> </span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Daniel's Testimonial -->
+							<div class="single-testimonial pt-65">
+								<div class="font-back-tittle mb-105">
+									<div class="archivment-front">
+										<img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Daniel M.">
+									</div>
+									<h3 class="archivment-back">Testimonial</h3>
+								</div>
+								<div class="testimonial-caption text-center">
+									<p>
+										"Impeccable service, elegant surroundings, and an unbeatable view made this hotel a standout. After long meetings, returning to a calm, luxurious space with top-tier dining was exactly what I needed. Highly recommend for anyone traveling on business who doesn’t want to compromise comfort."
+									</p>
+									<div class="testimonial-ratting">
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+										<i class="fas fa-star"></i>
+									</div>
+									<div class="rattiong-caption">
+										<span>— Daniel M., London, <span>Business Traveler</span> </span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Testimonial End -->
+		<!-- Gallery img Start-->
+		<div class="gallery-area fix">
+			<div class="container-fluid p-0">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="gallery-active owl-carousel">
+							<div class="gallery-img">
+								<a href="#"><img src="~/assets/img/gallery/gallery1.jpg" alt=""></a>
+							</div>
+							<div class="gallery-img">
+								<a href="#"><img src="~/assets/img/gallery/gallery2.jpg" alt=""></a>
+							</div>
+							<div class="gallery-img">
+								<a href="#"><img src="~/assets/img/gallery/gallery3.jpg" alt=""></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Gallery img End-->
+	</main>
 </body>
 </html>
