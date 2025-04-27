@@ -21,8 +21,8 @@ namespace BookingSystem.Models
         public int ID { get; set; }
 
         [Required]
-        public string GuestID { get; set; }
-        public virtual ApplicationUser Guest { get; set; }
+        public string ApplicationUserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         [Required]
         public int RoomID { get; set; }

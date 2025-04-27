@@ -1,40 +1,41 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BookingSystem.Models
-{
-    public enum RoomStatus { Available, Occupied, Maintenance }
-    public class Room
+    namespace BookingSystem.Models
     {
-        public int ID { get; set; }
-        public int RoomClassID { get; set; }
-        public virtual RoomClass? RoomClass { get; set; }
-
-        [Range(1, 10, ErrorMessage = "Floor must be between 1 and 10.")]
-        public int Floor { get; set; }
-        [Range(1, 1000000)]
-        public decimal Price { get; set; }
-        [Range(1, 5, ErrorMessage = "Rate must be between 1 and 5.")]
-        public int Rate { get; set; }
-        public string? ImageUrl { get; set; }
-        [NotMapped] // This prevents EF from trying to store in database
-        public IFormFile? ImageFile { get; set; } // Make it optional
-        public string? View { get; set; }
-        public RoomStatus Status { get; set; } = RoomStatus.Available;
-        public RoomStatus? PreviousStatus { get; set; }
-
-        public virtual List<Booking> Bookings { get; set; } = new();
-
-
-        //Method to validate status transition
-        //preventing a room from going directly from Maintenance to Occupied
-        public bool IsValidStatusTransition(RoomStatus newStatus)
+        public enum RoomStatus { Available, Occupied, Maintenance }
+        public class Room
         {
-            if (PreviousStatus == RoomStatus.Maintenance && newStatus == RoomStatus.Occupied)
+            public int ID { get; set; }
+            [Required]
+            public int RoomClassID { get; set; }
+            public virtual RoomClass RoomClass { get; set; }
+
+            [Range(1, 10, ErrorMessage = "Floor must be between 1 and 10.")]
+            public int Floor { get; set; }
+            [Range(1, 1000000)]
+            public decimal Price { get; set; }
+            [Range(1, 5, ErrorMessage = "Rate must be between 1 and 5.")]
+            public int Rate { get; set; }
+            public string? ImageUrl { get; set; }
+            [NotMapped] // This prevents EF from trying to store in database
+            public IFormFile? ImageFile { get; set; } // Make it optional
+            public string? View { get; set; }
+            public RoomStatus Status { get; set; } = RoomStatus.Available;
+            public RoomStatus? PreviousStatus { get; set; }
+
+            public virtual List<Booking> Bookings { get; set; } = new();
+
+
+            //Method to validate status transition
+            //preventing a room from going directly from Maintenance to Occupied
+            public bool IsValidStatusTransition(RoomStatus newStatus)
             {
-                return false;
+                if (PreviousStatus == RoomStatus.Maintenance && newStatus == RoomStatus.Occupied)
+                {
+                    return false;
+                }
+                return true;
             }
-            return true;
         }
     }
-}

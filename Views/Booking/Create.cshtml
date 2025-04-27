@@ -1,0 +1,141 @@
+﻿@model BookingViewModel
+
+@{
+    ViewData["Title"] = "Create Booking";
+}
+
+<div class="container py-5">
+    <h2 class="mb-5 text-center fw-bold" style="color: #2F3C7E;">📝 Create a New Booking</h2>
+
+    <!-- Room Summary Card -->
+    <div class="card shadow-sm rounded-4 mb-5 border-0">
+        <div class="card-header text-white rounded-top-4" style="background: linear-gradient(to right, #4F8A8B, #2F3C7E);">
+            <h4 class="mb-0 d-flex justify-content-between align-items-center">
+                <span><i class="bi bi-building"></i> <span style="color: #FFC947;">@ViewBag.Room.RoomClass.Type Room</span></span>
+                <span class="badge bg-@(ViewBag.Room.Status == RoomStatus.Available ? "success" : ViewBag.Room.Status == RoomStatus.Occupied ? "danger" : "warning")">
+                    @ViewBag.Room.Status
+                </span>
+            </h4>
+        </div>
+
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(ViewBag.Room.ImageUrl))
+            {
+                <div class="text-center mb-4">
+                    <img src="@ViewBag.Room.ImageUrl" class="img-fluid rounded-3 shadow" style="max-height: 250px; object-fit: cover;" alt="Room Image">
+                </div>
+            }
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="room-detail-item"><i class="bi bi-currency-dollar"></i> <strong>Price:</strong> <span class="text-success fw-bold">$@ViewBag.Room.Price.ToString("0.00")</span> / night</div>
+                    <div class="room-detail-item"><i class="bi bi-binoculars"></i> <strong>View:</strong> @(ViewBag.Room.View ?? "Not specified")</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="room-detail-item"><i class="bi bi-bed"></i> <strong>Beds:</strong> @ViewBag.Room.RoomClass.NumberOfBeds</div>
+                    <div class="room-detail-item"><i class="bi bi-tags"></i> <strong>Type:</strong> <span class="badge bg-info">@ViewBag.Room.RoomClass.Type</span></div>
+                </div>
+            </div>
+
+            <div class="mt-4 p-3 rounded-3 bg-light">
+                <h5><i class="bi bi-card-text"></i> Description</h5>
+                <p class="mb-0">@(ViewBag.Room.RoomClass.Description ?? "No description available")</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Form -->
+    <form asp-action="Create" method="post" class="row g-4 needs-validation" novalidate>
+        @Html.AntiForgeryToken()
+
+        <!-- Hidden Room ID -->
+        <input type="hidden" asp-for="RoomID" value="@ViewBag.Room.ID" />
+
+        <div class="col-md-6">
+            <label asp-for="CheckInDate" class="form-label"><i class="bi bi-calendar-check"></i> Check-In Date</label>
+            <input asp-for="CheckInDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckInDate" class="text-danger small"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="CheckOutDate" class="form-label"><i class="bi bi-calendar-x"></i> Check-Out Date</label>
+            <input asp-for="CheckOutDate" type="date" class="form-control shadow-sm rounded-3" required />
+            <span asp-validation-for="CheckOutDate" class="text-danger small"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="PaymentAmount" class="form-label"><i class="bi bi-credit-card"></i> Payment Amount</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input asp-for="PaymentAmount" type="number" step="0.01" value="@ViewBag.Room.Price.ToString("0.00")" class="form-control shadow-sm rounded-3" required />
+            </div>
+            <span asp-validation-for="PaymentAmount" class="text-danger small"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="paymentMethod" class="form-label"><i class="bi bi-wallet2"></i> Payment Method</label>
+            <select asp-for="paymentMethod" class="form-select shadow-sm rounded-3" required>
+                <option value="">Select Payment Method</option>
+                @foreach (var method in Enum.GetValues(typeof(BookingSystem.Models.PaymentMethod)))
+                {
+                    <option value="@method">@method.ToString().Replace("_", " ")</option>
+                }
+            </select>
+            <span asp-validation-for="paymentMethod" class="text-danger small"></span>
+        </div>
+
+        <div class="col-12 mt-4">
+            <div class="d-flex justify-content-center gap-4">
+                <button type="submit" class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
+                        style="background-color: #FFC947; color: white;">
+                    <i class="bi bi-check-circle"></i> Confirm Booking
+                </button>
+                <a href="@Url.Action("Index", "Room")"
+                   class="btn py-3 px-5 fs-5 rounded-3 shadow-sm"
+                   style="background-color: #6c757d; color: white;">
+                    <i class="bi bi-arrow-left"></i> Back to Rooms
+                </a>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .room-detail-item {
+        margin-bottom: 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
+    }
+
+        .room-detail-item i {
+            color: #2F3C7E;
+            margin-right: 8px;
+        }
+</style>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const checkIn = document.getElementById('CheckInDate');
+            const checkOut = document.getElementById('CheckOutDate');
+            const payment = document.getElementById('PaymentAmount');
+            const roomPrice = @ViewBag.Room.Price;
+
+            function updatePayment() {
+                if (checkIn.value && checkOut.value) {
+                    const inDate = new Date(checkIn.value);
+                    const outDate = new Date(checkOut.value);
+                    const nights = (outDate - inDate) / (1000 * 60 * 60 * 24);
+                    if (nights > 0) {
+                        payment.value = (nights * roomPrice).toFixed(2);
+                    }
+                }
+            }
+
+            checkIn.addEventListener('change', updatePayment);
+            checkOut.addEventListener('change', updatePayment);
+        });
+    </script>
+}

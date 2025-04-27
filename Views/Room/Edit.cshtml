@@ -1,4 +1,4 @@
-﻿@model BookingSystem.Models.Room
+﻿@model RoomViewModel
 @{
     ViewData["Title"] = "Edit Room";
 }
@@ -13,7 +13,7 @@
 
     <form asp-action="Edit" method="post" enctype="multipart/form-data" class="row g-4 needs-validation">
         <input type="hidden" asp-for="ID" />
-        <input type="hidden" asp-for="ImageUrl" />
+        <input type="hidden" asp-for="ExistingImageUrl" />
 
         <!-- Room Class -->
         <div class="col-md-6">
@@ -42,13 +42,6 @@
             <span asp-validation-for="Price" class="text-danger small"></span>
         </div>
 
-        <!-- View -->
-        <div class="col-md-6">
-            <label asp-for="View" class="form-label">View Description</label>
-            <input asp-for="View" class="form-control shadow-sm rounded-3" required />
-            <span asp-validation-for="View" class="text-danger small"></span>
-        </div>
-
         <!-- Status -->
         <div class="col-md-6">
             <label asp-for="Status" class="form-label">Status</label>
@@ -60,24 +53,41 @@
             <span asp-validation-for="Status" class="text-danger small"></span>
         </div>
 
+        <!-- View -->
+        <div class="col-md-6">
+            <label asp-for="View" class="form-label">View Description</label>
+            <input asp-for="View" class="form-control shadow-sm rounded-3" />
+            <span asp-validation-for="View" class="text-danger small"></span>
+        </div>
+
         <!-- Rate -->
         <div class="col-md-6">
             <label asp-for="Rate" class="form-label">Rating (1-5)</label>
-            <input asp-for="Rate" type="number" min="1" max="5" class="form-control shadow-sm rounded-3" required />
+            <select asp-for="Rate" class="form-select shadow-sm rounded-3" required>
+                <option value="1">★</option>
+                <option value="2">★★</option>
+                <option value="3">★★★</option>
+                <option value="4">★★★★</option>
+                <option value="5">★★★★★</option>
+            </select>
             <span asp-validation-for="Rate" class="text-danger small"></span>
         </div>
 
         <!-- Image Upload -->
         <div class="col-12">
-            <label class="form-label">Room Image</label>
-            <div class="input-group">
-                <input type="file" name="imageFile" class="form-control shadow-sm rounded-3" accept="image/*" />
-            </div>
-            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            <label asp-for="ImageFile" class="form-label">Room Image</label>
+            <input asp-for="ImageFile" class="form-control shadow-sm rounded-3" accept="image/*" />
+            <span asp-validation-for="ImageFile" class="text-danger small"></span>
+
+            @if (!string.IsNullOrEmpty(Model.ExistingImageUrl))
             {
                 <div class="mt-3">
                     <small class="text-muted">Current Image:</small>
-                    <img src="@Model.ImageUrl" class="img-thumbnail d-block mt-2" style="max-height: 200px;" />
+                    <img src="@Model.ExistingImageUrl" class="img-thumbnail d-block mt-2" style="max-height: 200px;" />
+                    <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" id="removeImage" name="removeImage" />
+                        <label class="form-check-label" for="removeImage">Remove current image</label>
+                    </div>
                 </div>
             }
         </div>

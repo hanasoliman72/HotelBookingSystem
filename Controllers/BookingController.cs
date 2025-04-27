@@ -4,6 +4,7 @@ using BookingSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Http;
 using System.Security.Claims;
+using System.Diagnostics;
 
 public class BookingController : Controller
 {
@@ -14,114 +15,132 @@ public class BookingController : Controller
         _context = context;
     }
 
-    // GET: Booking/Create
+    // GET: Booking/Create/1
     public IActionResult Create(int roomId)
     {
-        var room = _context.rooms.Include(r => r.RoomClass).FirstOrDefault(r => r.ID == roomId);
+        var room = _context.rooms
+            .Include(r => r.RoomClass)
+            .FirstOrDefault(r => r.ID == roomId);
 
         if (room == null)
         {
             return NotFound();
         }
 
-        var booking = new Booking
+        var viewModel = new BookingViewModel
         {
             RoomID = roomId,
             PaymentAmount = room.Price,
+            // Set default dates
+            CheckInDate = DateTime.Today,
+            CheckOutDate = DateTime.Today.AddDays(1)
         };
 
         ViewBag.Room = room;
-
-        return View(booking);
-    }
-
-    // Booking/BookAny
-    public IActionResult BookAny()
-    {
-        var availableRooms = _context.rooms
-                                    .Include(r => r.RoomClass)
-                                    .Where(r => r.Status == RoomStatus.Available)
-                                    .ToList();
-
-        var viewModel = new BookingViewModel
-        {
-            Rooms = availableRooms,
-            Booking = new Booking() // Initialize a new booking object
-        };
-
         return View(viewModel);
     }
     [HttpPost]
-    public async Task<IActionResult> BookAny(BookingViewModel viewModel)
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(BookingViewModel viewModel)
     {
+        // Get user ID from session
         var userId = HttpContext.Session.GetString("Id");
-        if (userId == null)
+        if (string.IsNullOrEmpty(userId))
         {
-            return Redirect("/Identity/Account/Login");
+            return RedirectToAction("Login", "Account");
         }
 
-        // Set GuestID before model validation
-        viewModel.Booking.GuestID = userId;
-        //bool isValid = true;
-        //if (viewModel.Booking.RoomID == 0)
-        //{
-        //    isValid = false;
-        //    //ModelState.AddModelError("Booking.RoomID", "Room is required.");
-        //}
+        // Get the room
+        var room = await _context.rooms.FindAsync(viewModel.RoomID);
 
-        //else if (viewModel.Booking.CheckInDate == default || viewModel.Booking.CheckInDate < DateTime.Now.Date)
-        //{
-        //    isValid = false;
-        //    //ModelState.AddModelError("Booking.CheckInDate", "Check-in date must be today or in the future.");
-        //}
+        // Manual validation
+        if (viewModel.CheckInDate == default)
+            ModelState.AddModelError("CheckInDate", "Check-in date is required.");
 
-        //else if (viewModel.Booking.CheckOutDate <= viewModel.Booking.CheckInDate)
-        //{
-        //    isValid = false;
-        //    //ModelState.AddModelError("Booking.CheckOutDate", "Check-out date must be after the check-in date.");
-        //}
+        if (viewModel.CheckOutDate == default)
+            ModelState.AddModelError("CheckOutDate", "Check-out date is required.");
 
-        //else if (viewModel.Booking.PaymentAmount < 90 || viewModel.Booking.PaymentAmount > 1000000)
-        //{
-        //    isValid = false;
-        //    //ModelState.AddModelError("Booking.PaymentAmount", "Payment amount must be between $90 and $1,000,000.");
-        //}
+        if (viewModel.CheckOutDate <= viewModel.CheckInDate)
+            ModelState.AddModelError("CheckOutDate", "Check-out date must be after check-in date.");
 
-        //else if (viewModel.Booking.paymentMethod == 0)
-        //{
-        //    isValid = false;
-        //    //ModelState.AddModelError("Booking.paymentMethod", "Payment method is required.");
-        //}
 
-        //if (!isValid)
-        //{
-        //    return View(viewModel);
-        //}
-
-        // Proceed with the rest of the code after validation passes
-        var room = await _context.rooms
-                          .FirstOrDefaultAsync(r => r.ID == viewModel.Booking.RoomID);
-        if (room != null)
+        if (ModelState.IsValid)
         {
-            room.Status = RoomStatus.Occupied;
-            _context.rooms.Update(room);
+            try
+            {
+                // Map ViewModel to Entity
+                var booking = new Booking
+                {
+                    RoomID = viewModel.RoomID,
+                    ApplicationUserID = userId,
+                    CheckInDate = viewModel.CheckInDate,
+                    CheckOutDate = viewModel.CheckOutDate,
+                    PaymentAmount = viewModel.PaymentAmount,
+                    paymentMethod = viewModel.paymentMethod
+                };
+
+                _context.Add(booking);
+                room.Status = RoomStatus.Occupied;
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Success));
+            }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("", "An error occurred while saving. Please try again.");
+                Debug.WriteLine(ex.Message);
+            }
         }
-
-        _context.bookings.Add(viewModel.Booking);
-        await _context.SaveChangesAsync();
-
-        return RedirectToAction("Success");
+        ViewBag.Room = room;
+        return View(viewModel);
     }
-
-
     public IActionResult Success()
     {
         return View();
     }
 
-    public IActionResult MyBookings()
+    public async Task<IActionResult> MyBookings()
     {
-        return View();
+        var userId = HttpContext.Session.GetString("Id");
+        if (string.IsNullOrEmpty(userId))
+        {
+            return Redirect("/Identity/Account/Login");
+        }
+
+        var bookings = await _context.bookings
+            .Include(b => b.Room)
+                .ThenInclude(r => r.RoomClass)
+            .Where(b => b.ApplicationUserID == userId)
+            .OrderByDescending(b => b.CheckInDate)
+            .ToListAsync();
+
+        return View(bookings);
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Cancel(int id)
+    {
+        var booking = await _context.bookings
+            .Include(b => b.Room)
+            .FirstOrDefaultAsync(b => b.ID == id);
+
+        if (booking == null)
+        {
+            TempData["ErrorMessage"] = "Booking not found.";
+            return RedirectToAction("MyBookings");
+        }
+
+        // Optional: free the room if needed
+        if (booking.Room != null)
+        {
+            booking.Room.Status = RoomStatus.Available;
+        }
+
+        _context.bookings.Remove(booking);
+        await _context.SaveChangesAsync();
+
+        TempData["SuccessMessage"] = "Booking canceled successfully!";
+        return RedirectToAction("MyBookings");
     }
 
 }

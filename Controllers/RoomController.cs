@@ -19,18 +19,13 @@ namespace BookingSystem.Controllers
         }
 
         // GET: Room/Index
-        public async Task<IActionResult> Index(RoomStatus? status, RoomType? type, int? numberOfBeds)
+        public async Task<IActionResult> Index(RoomType? type, int? numberOfBeds, decimal? minPrice, decimal? maxPrice)
         {
             var rooms = _context.rooms
                 .Include(r => r.RoomClass)
                 .AsQueryable();
 
-            // Filtering
-            if (status.HasValue)
-            {
-                rooms = rooms.Where(r => r.Status == status);
-            }
-
+            
             if (type.HasValue)
             {
                 rooms = rooms.Where(r => r.RoomClass.Type == type);
@@ -39,6 +34,17 @@ namespace BookingSystem.Controllers
             if (numberOfBeds.HasValue)
             {
                 rooms = rooms.Where(r => r.RoomClass.NumberOfBeds == numberOfBeds.Value);
+            }
+
+            // Add price filtering
+            if (minPrice.HasValue)
+            {
+                rooms = rooms.Where(r => r.Price >= minPrice.Value);
+            }
+
+            if (maxPrice.HasValue)
+            {
+                rooms = rooms.Where(r => r.Price <= maxPrice.Value);
             }
 
             // Check if user is admin
@@ -60,47 +66,55 @@ namespace BookingSystem.Controllers
         // GET: Room/Add
         public IActionResult Add()
         {
-            var roomClasses = _context.roomClasses.ToList();
-            ////Console.WriteLine($"RoomClasses count: {roomClasses?.Count ?? 0}"); // Debug
-            ViewBag.RoomClasses = roomClasses ?? new List<RoomClass>();
-            return View();
+            ViewBag.RoomClasses = _context.roomClasses.ToList();
+            return View(new RoomViewModel());
         }
 
         // POST: Room/Add
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Add(Room room, IFormFile imageFile)
+        public async Task<IActionResult> Add(RoomViewModel model)
         {
-            if (ModelState.IsValid)
+            var roomClasses = _context.roomClasses.ToList();
+
+            if (!ModelState.IsValid)
             {
-                if (imageFile != null && imageFile.Length > 0)
-                {
-                    // Set your desired path
-                    var uploadsFolder = Path.Combine("wwwroot", "assets", "img", "rooms");
-                    Directory.CreateDirectory(uploadsFolder); // Create if doesn't exist
-
-                    // Generate unique filename
-                    var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(imageFile.FileName);
-                    var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                    // Save file
-                    using (var fileStream = new FileStream(filePath, FileMode.Create))
-                    {
-                        await imageFile.CopyToAsync(fileStream);
-                    }
-
-                    // Store relative path
-                    room.ImageUrl = "/assets/img/rooms/" + uniqueFileName;
-                }
-
-                room.PreviousStatus = room.Status;
-                _context.Add(room);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                ViewBag.RoomClasses = roomClasses;
+                return View(model);
             }
 
-            ViewBag.RoomClasses = _context.roomClasses.ToList();
-            return View(room);
+            // Map ViewModel to Entity
+            var room = new Room
+            {
+                RoomClassID = model.RoomClassID,
+                Floor = model.Floor,
+                Price = model.Price,
+                Rate = model.Rate,
+                View = model.View,
+                Status = RoomStatus.Available,
+                PreviousStatus = null
+            };
+
+            // Handle image upload
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
+            {
+                var uploadsFolder = Path.Combine("wwwroot", "assets", "img", "rooms");
+                Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.ImageFile.FileName);
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+
+                room.ImageUrl = "/assets/img/rooms/" + uniqueFileName;
+            }
+
+            _context.Add(room);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Room/Delete/5
@@ -122,7 +136,6 @@ namespace BookingSystem.Controllers
 
             return View(room);
         }
-
         // POST: Room/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -153,73 +166,94 @@ namespace BookingSystem.Controllers
                 return NotFound();
             }
 
+            var viewModel = new RoomViewModel
+            {
+                ID = room.ID,
+                RoomClassID = room.RoomClassID,
+                Status = room.Status,
+                Floor = room.Floor,
+                Price = room.Price,
+                Rate = room.Rate,
+                View = room.View,
+                ExistingImageUrl = room.ImageUrl
+            };
+
             ViewBag.RoomClasses = await _context.roomClasses.ToListAsync();
-            return View(room);
+            return View(viewModel);
         }
 
         // POST: Room/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,RoomClassID,Floor,Price,View,Status,Rate,ImageUrl")] Room room, IFormFile? imageFile)
+        public async Task<IActionResult> Edit(int id, RoomViewModel model)
         {
-            if (id != room.ID)
+            var roomClasses = await _context.roomClasses.ToListAsync();
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.RoomClasses = roomClasses;
+                return View(model);
+            }
+
+            var room = await _context.rooms.FindAsync(id);
+            if (room == null)
             {
                 return NotFound();
             }
 
-            if (ModelState.IsValid)
+            // Update properties from view model
+            room.RoomClassID = model.RoomClassID;
+            room.Status = model.Status;
+            room.Floor = model.Floor;
+            room.Price = model.Price;
+            room.Rate = model.Rate;
+            room.View = model.View;
+
+            // Handle image upload if new file provided
+            if (model.ImageFile != null && model.ImageFile.Length > 0)
             {
-                try
+                // Delete old image if exists
+                if (!string.IsNullOrEmpty(room.ImageUrl))
                 {
-                    // Handle image upload if new file provided
-                    if (imageFile != null && imageFile.Length > 0)
+                    var oldImagePath = Path.Combine(_environment.WebRootPath, room.ImageUrl.TrimStart('/'));
+                    if (System.IO.File.Exists(oldImagePath))
                     {
-                        // Delete old image if exists
-                        if (!string.IsNullOrEmpty(room.ImageUrl))
-                        {
-                            var oldImagePath = Path.Combine(_environment.WebRootPath, room.ImageUrl.TrimStart('/'));
-                            if (System.IO.File.Exists(oldImagePath))
-                            {
-                                System.IO.File.Delete(oldImagePath);
-                            }
-                        }
-
-                        // Save new image
-                        var uploadsFolder = Path.Combine(_environment.WebRootPath, "assets", "img", "rooms");
-                        Directory.CreateDirectory(uploadsFolder);
-
-                        var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(imageFile.FileName)}";
-                        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
-
-                        using (var fileStream = new FileStream(filePath, FileMode.Create))
-                        {
-                            await imageFile.CopyToAsync(fileStream);
-                        }
-
-                        room.ImageUrl = $"/assets/img/rooms/{uniqueFileName}";
-                    }
-
-                    _context.Update(room);
-                    await _context.SaveChangesAsync();
-
-                    TempData["SuccessMessage"] = "Room updated successfully";
-                    return RedirectToAction(nameof(Index));
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!RoomExists(room.ID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
+                        System.IO.File.Delete(oldImagePath);
                     }
                 }
+
+                // Save new image
+                var uploadsFolder = Path.Combine(_environment.WebRootPath, "assets", "img", "rooms");
+                Directory.CreateDirectory(uploadsFolder);
+
+                var uniqueFileName = $"{Guid.NewGuid()}{Path.GetExtension(model.ImageFile.FileName)}";
+                var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    await model.ImageFile.CopyToAsync(fileStream);
+                }
+
+                room.ImageUrl = $"/assets/img/rooms/{uniqueFileName}";
             }
 
-            ViewBag.RoomClasses = await _context.roomClasses.ToListAsync();
-            return View(room);
+            try
+            {
+                _context.Update(room);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!RoomExists(room.ID))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
         }
         private bool RoomExists(int id)
         {

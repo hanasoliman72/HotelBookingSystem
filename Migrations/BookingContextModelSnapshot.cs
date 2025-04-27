@@ -106,15 +106,15 @@ namespace BookingSystem.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("ApplicationUserID")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("CheckInDate")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CheckOutDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("GuestID")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("PaymentAmount")
                         .HasColumnType("decimal(18,2)");
@@ -127,7 +127,7 @@ namespace BookingSystem.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("GuestID");
+                    b.HasIndex("ApplicationUserID");
 
                     b.HasIndex("RoomID");
 
@@ -455,9 +455,9 @@ namespace BookingSystem.Migrations
 
             modelBuilder.Entity("BookingSystem.Models.Booking", b =>
                 {
-                    b.HasOne("BookingSystem.Models.ApplicationUser", "Guest")
+                    b.HasOne("BookingSystem.Models.ApplicationUser", "ApplicationUser")
                         .WithMany("Bookings")
-                        .HasForeignKey("GuestID")
+                        .HasForeignKey("ApplicationUserID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -467,7 +467,7 @@ namespace BookingSystem.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Guest");
+                    b.Navigation("ApplicationUser");
 
                     b.Navigation("Room");
                 });

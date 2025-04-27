@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookingSystem.Migrations
 {
     /// <inheritdoc />
-    public partial class migration1 : Migration
+    public partial class finalOne : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -189,7 +189,7 @@ namespace BookingSystem.Migrations
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     View = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Status = table.Column<int>(type: "int", nullable: false),
-                    PreviousStatus = table.Column<int>(type: "int", nullable: false)
+                    PreviousStatus = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -208,7 +208,7 @@ namespace BookingSystem.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    GuestID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ApplicationUserID = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RoomID = table.Column<int>(type: "int", nullable: false),
                     CheckInDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CheckOutDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -219,8 +219,8 @@ namespace BookingSystem.Migrations
                 {
                     table.PrimaryKey("PK_bookings", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_bookings_AspNetUsers_GuestID",
-                        column: x => x.GuestID,
+                        name: "FK_bookings_AspNetUsers_ApplicationUserID",
+                        column: x => x.ApplicationUserID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -317,9 +317,9 @@ namespace BookingSystem.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_bookings_GuestID",
+                name: "IX_bookings_ApplicationUserID",
                 table: "bookings",
-                column: "GuestID");
+                column: "ApplicationUserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_bookings_RoomID",

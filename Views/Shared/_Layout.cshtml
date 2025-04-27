@@ -66,19 +66,10 @@
                                     <ul id="navigation">
                                         <li><a asp-controller="Home" asp-action="Index">Home</a></li>
                                         <li><a asp-controller="Home" asp-action="About">About</a></li>
+                                        <li><a asp-controller="Booking" asp-action="MyBookings">My Bookings</a></li>
                                         @if (SignInManager.IsSignedIn(User))
                                         {
-                                            var role = HttpContextAccessor.HttpContext.Session.GetString("role");
-                                            @if(role == "Admin")
-                                            {
-                                                <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
-                                            }
-                                            else
-                                            {
-                                                <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
-                                                <li><a asp-controller="Home" asp-action="Index">My Bookings</a></li>
-                                            }
-                                            
+                                            <li><a asp-controller="Room" asp-action="Index">Rooms</a></li>
                                             <li>
                                                 <a href="javascript:void(0);" onclick="document.getElementById('logoutForm').submit();"
                                                    onmouseover="this.style.color='#ff5f13'" onmouseout="this.style.color='black'"
@@ -105,7 +96,7 @@
                             <div class="header-btn">
                                 @if(SignInManager.IsSignedIn(User))
                                 {
-                                    <a asp-controller="Booking" asp-action="BookAny" class="btn btn1 d-none d-lg-block">Book Online</a>
+                                    <a asp-controller="Room" asp-action="Index" class="btn btn1 d-none d-lg-block">Book Online</a>
                                 }
                                 else
                                 {
@@ -125,6 +116,8 @@
         </div>
         <!-- Header End -->
     </header>
+    @RenderSection("Styles", required: false)
+
 
     <main>
         @RenderBody()

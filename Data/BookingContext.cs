@@ -37,17 +37,6 @@ namespace BookingSystem.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Booking>()
-            //    .HasOne(b => b.Room)
-            //    .WithMany()
-            //    .HasForeignKey(b => b.RoomID)
-            //    .OnDelete(DeleteBehavior.Restrict);
-
-            //modelBuilder.Entity<Booking>()
-            //    .HasOne(b => b.applicationUser)
-            //    .WithMany()
-            //    .HasForeignKey(b => b.GuestID)
-            //    .OnDelete(DeleteBehavior.Restrict);
             base.OnModelCreating(modelBuilder);
             Seed(modelBuilder);
         }
