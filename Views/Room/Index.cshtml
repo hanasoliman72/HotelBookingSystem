@@ -119,10 +119,16 @@
                                                 <i class="fas fa-trash-alt me-1"></i> Delete
                                             </a>
                                             <a href="@Url.Action("Create", "Booking", new { roomId = room.ID })"
-                                               class="btn btn-outline-primary mt-2">
-                                                <i class="fas fa-calendar-check me-1"></i> Book Now
+                                               class="btn btn-outline-primary mt-2 @(room.Status == RoomStatus.Occupied || room.Status == RoomStatus.Maintenance ? "disabled" : "")"
+                                            @if (room.Status == RoomStatus.Occupied || room.Status == RoomStatus.Maintenance)
+                                            {
+                                                var message = room.Status == RoomStatus.Occupied
+                                                ? "This room is currently occupied!"
+                                                : "This room is under maintenance and cannot be booked!";
+                                                <text>onclick="alert('@message'); return false;"</text>
+                                            }>
+                                            <i class="fas fa-calendar-check me-1"></i> Book Now
                                             </a>
-
                                         }
                                     </div>
                                 </div>

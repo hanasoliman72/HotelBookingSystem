@@ -52,7 +52,7 @@ public class BookingController : Controller
 
         // Get the room
         var room = await _context.rooms.FindAsync(viewModel.RoomID);
-
+        
         // Manual validation
         if (viewModel.CheckInDate == default)
             ModelState.AddModelError("CheckInDate", "Check-in date is required.");
@@ -130,7 +130,6 @@ public class BookingController : Controller
             return RedirectToAction("MyBookings");
         }
 
-        // Optional: free the room if needed
         if (booking.Room != null)
         {
             booking.Room.Status = RoomStatus.Available;

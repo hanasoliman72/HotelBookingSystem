@@ -841,12 +841,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\prising\\9.png"
     },
     {
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\252e09ab-43c9-4379-be98-89b353f32ca9.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\252e09ab-43c9-4379-be98-89b353f32ca9.jpg"
+    },
+    {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\3402021a-8d36-42b3-9bf4-64495aaf4498.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\rooms\\3402021a-8d36-42b3-9bf4-64495aaf4498.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\44638b4d-1e9c-4069-8e32-5914bef009c9.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\rooms\\44638b4d-1e9c-4069-8e32-5914bef009c9.jpg"
+    },
+    {
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\6ed53dd1-c19c-4aaf-8849-ec5b5ce08f13.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\6ed53dd1-c19c-4aaf-8849-ec5b5ce08f13.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\910449da-e772-4cb2-8c59-9065493968cc.jpg",
@@ -857,16 +865,20 @@
       "PackagePath": "staticwebassets\\assets\\img\\rooms\\a5d14558-fea0-4e37-9fd4-8d451bd63d22.jpg"
     },
     {
-      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\b7da699f-ad4d-4da9-8d83-fff6f1b495a8.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\b7da699f-ad4d-4da9-8d83-fff6f1b495a8.jpg"
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\c0459df4-31ab-46e9-8190-e5493c523b72.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\c0459df4-31ab-46e9-8190-e5493c523b72.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\c39d0f03-b812-40d6-92be-12fcd064b200.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\rooms\\c39d0f03-b812-40d6-92be-12fcd064b200.jpg"
     },
     {
-      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\ea698f4d-7e4b-4c25-bfb9-9e04deab8426.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\ea698f4d-7e4b-4c25-bfb9-9e04deab8426.jpg"
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\d59f1f7c-28b3-4a66-b971-51291c6dca7f.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\d59f1f7c-28b3-4a66-b971-51291c6dca7f.jpg"
+    },
+    {
+      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room1.jpg",
+      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room1.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room2.jpg",
@@ -875,10 +887,6 @@
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room3.jpg",
       "PackagePath": "staticwebassets\\assets\\img\\rooms\\room3.jpg"
-    },
-    {
-      "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room4.jpg",
-      "PackagePath": "staticwebassets\\assets\\img\\rooms\\room4.jpg"
     },
     {
       "Id": "D:\\VS Projects\\BookingSystem\\wwwroot\\assets\\img\\rooms\\room5.jpg",
